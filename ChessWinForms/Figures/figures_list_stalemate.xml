@@ -1,0 +1,942 @@
+<?xml version="1.0"?>
+<ArrayOfFigure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>0</X>
+      <Y>0</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>64</X>
+      <Y>0</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>128</X>
+      <Y>0</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>192</X>
+      <Y>0</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>256</X>
+      <Y>0</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>320</X>
+      <Y>0</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>384</X>
+      <Y>0</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="King">
+    <DIRECTIONs>
+      <DIRECTIONS>TOP</DIRECTIONS>
+      <DIRECTIONS>RIGHT</DIRECTIONS>
+      <DIRECTIONS>BOT</DIRECTIONS>
+      <DIRECTIONS>LEFT</DIRECTIONS>
+      <DIRECTIONS>DIAGONAL_LB_RT</DIRECTIONS>
+      <DIRECTIONS>DIAGONAL_LT_RB</DIRECTIONS>
+      <DIRECTIONS>DIAGONAL_RB_LT</DIRECTIONS>
+      <DIRECTIONS>DIAGONAL_RT_LB</DIRECTIONS>
+    </DIRECTIONs>
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>King</Name>
+    <Side>Black</Side>
+    <Moves>1</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>448</X>
+      <Y>0</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+    <Surrounding />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>0</X>
+      <Y>64</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>64</X>
+      <Y>64</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>128</X>
+      <Y>64</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>192</X>
+      <Y>64</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>256</X>
+      <Y>64</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>320</X>
+      <Y>64</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>384</X>
+      <Y>64</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>448</X>
+      <Y>64</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>0</X>
+      <Y>128</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>64</X>
+      <Y>128</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Pawn">
+    <DIRECTIONs>
+      <DIRECTIONS>BOT</DIRECTIONS>
+    </DIRECTIONs>
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Pawn</Name>
+    <Side>Black</Side>
+    <Moves>2</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>128</X>
+      <Y>128</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>192</X>
+      <Y>128</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>256</X>
+      <Y>128</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="King">
+    <DIRECTIONs>
+      <DIRECTIONS>TOP</DIRECTIONS>
+      <DIRECTIONS>RIGHT</DIRECTIONS>
+      <DIRECTIONS>BOT</DIRECTIONS>
+      <DIRECTIONS>LEFT</DIRECTIONS>
+      <DIRECTIONS>DIAGONAL_LB_RT</DIRECTIONS>
+      <DIRECTIONS>DIAGONAL_LT_RB</DIRECTIONS>
+      <DIRECTIONS>DIAGONAL_RB_LT</DIRECTIONS>
+      <DIRECTIONS>DIAGONAL_RT_LB</DIRECTIONS>
+    </DIRECTIONs>
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>King</Name>
+    <Side>White</Side>
+    <Moves>1</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>320</X>
+      <Y>128</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+    <Surrounding />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>384</X>
+      <Y>128</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Pawn">
+    <DIRECTIONs>
+      <DIRECTIONS>TOP</DIRECTIONS>
+    </DIRECTIONs>
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Pawn</Name>
+    <Side>White</Side>
+    <Moves>2</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>448</X>
+      <Y>128</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>0</X>
+      <Y>192</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Pawn">
+    <DIRECTIONs>
+      <DIRECTIONS>BOT</DIRECTIONS>
+    </DIRECTIONs>
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Pawn</Name>
+    <Side>Black</Side>
+    <Moves>2</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>64</X>
+      <Y>192</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Pawn">
+    <DIRECTIONs>
+      <DIRECTIONS>TOP</DIRECTIONS>
+    </DIRECTIONs>
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Pawn</Name>
+    <Side>White</Side>
+    <Moves>2</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>128</X>
+      <Y>192</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>192</X>
+      <Y>192</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>256</X>
+      <Y>192</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>320</X>
+      <Y>192</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>384</X>
+      <Y>192</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>448</X>
+      <Y>192</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>0</X>
+      <Y>256</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Pawn">
+    <DIRECTIONs>
+      <DIRECTIONS>TOP</DIRECTIONS>
+    </DIRECTIONs>
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Pawn</Name>
+    <Side>White</Side>
+    <Moves>2</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>64</X>
+      <Y>256</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>128</X>
+      <Y>256</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>192</X>
+      <Y>256</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>256</X>
+      <Y>256</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>320</X>
+      <Y>256</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>384</X>
+      <Y>256</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>448</X>
+      <Y>256</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>0</X>
+      <Y>320</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>64</X>
+      <Y>320</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>128</X>
+      <Y>320</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>192</X>
+      <Y>320</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>256</X>
+      <Y>320</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>320</X>
+      <Y>320</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>384</X>
+      <Y>320</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>448</X>
+      <Y>320</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>0</X>
+      <Y>384</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>64</X>
+      <Y>384</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Bishop">
+    <DIRECTIONs>
+      <DIRECTIONS>DIAGONAL_LB_RT</DIRECTIONS>
+      <DIRECTIONS>DIAGONAL_LT_RB</DIRECTIONS>
+      <DIRECTIONS>DIAGONAL_RB_LT</DIRECTIONS>
+      <DIRECTIONS>DIAGONAL_RT_LB</DIRECTIONS>
+    </DIRECTIONs>
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Bishop</Name>
+    <Side>White</Side>
+    <Moves>8</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>128</X>
+      <Y>384</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>192</X>
+      <Y>384</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>256</X>
+      <Y>384</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>320</X>
+      <Y>384</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>384</X>
+      <Y>384</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>448</X>
+      <Y>384</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>0</X>
+      <Y>448</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>64</X>
+      <Y>448</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>128</X>
+      <Y>448</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>192</X>
+      <Y>448</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>256</X>
+      <Y>448</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>320</X>
+      <Y>448</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>384</X>
+      <Y>448</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Space">
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>448</X>
+      <Y>448</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+</ArrayOfFigure>

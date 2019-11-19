@@ -1,0 +1,16 @@
+C:\Users\Kerfoer\source\repos\ChessWinForms\ChessWinForms\bin\Release\ChessWinForms.exe.config
+C:\Users\Kerfoer\source\repos\ChessWinForms\ChessWinForms\bin\Release\ChessWinForms.exe
+C:\Users\Kerfoer\source\repos\ChessWinForms\ChessWinForms\bin\Release\ChessWinForms.pdb
+C:\Users\Kerfoer\source\repos\ChessWinForms\ChessWinForms\bin\Release\WriteRead.dll
+C:\Users\Kerfoer\source\repos\ChessWinForms\ChessWinForms\bin\Release\Newtonsoft.Json.dll
+C:\Users\Kerfoer\source\repos\ChessWinForms\ChessWinForms\bin\Release\WriteRead.pdb
+C:\Users\Kerfoer\source\repos\ChessWinForms\ChessWinForms\bin\Release\Newtonsoft.Json.xml
+C:\Users\Kerfoer\source\repos\ChessWinForms\ChessWinForms\obj\Release\ChessWinForms.Forms.GameBoardForm.GameBoardForm.resources
+C:\Users\Kerfoer\source\repos\ChessWinForms\ChessWinForms\obj\Release\ChessWinForms.MainForm.resources
+C:\Users\Kerfoer\source\repos\ChessWinForms\ChessWinForms\obj\Release\ChessWinForms.Properties.Resources.resources
+C:\Users\Kerfoer\source\repos\ChessWinForms\ChessWinForms\obj\Release\ChessWinForms.csproj.GenerateResource.cache
+C:\Users\Kerfoer\source\repos\ChessWinForms\ChessWinForms\obj\Release\ChessWinForms.csproj.CoreCompileInputs.cache
+C:\Users\Kerfoer\source\repos\ChessWinForms\ChessWinForms\obj\Release\ChessWinForms.csproj.CopyComplete
+C:\Users\Kerfoer\source\repos\ChessWinForms\ChessWinForms\obj\Release\ChessWinForms.exe
+C:\Users\Kerfoer\source\repos\ChessWinForms\ChessWinForms\obj\Release\ChessWinForms.pdb
+C:\Users\Kerfoer\source\repos\ChessWinForms\ChessWinForms\obj\Release\ChessWinForms.csprojAssemblyReference.cache
