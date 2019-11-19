@@ -88,65 +88,6 @@ namespace ChessWinForms.Classes
 
         public bool ValidateStaleMate()
         {
-            #region OLD
-            /*
-            if (!CanKingMove(GameBoard.GetFigureByPoint(GameBoard.WhiteKing)) || !CanKingMove(GameBoard.GetFigureByPoint(GameBoard.BlackKing)))
-            {
-                return true;
-            }
-            List<Point> attackers = null;
-            List<Point> defenders = null;
-            List<Point> spaces = GameBoard.SpacesLocations;
-            Figure defender = null, attacker = null, space = null;
-            int cantMove = 0;
-
-            if (GameBoard.Player == "White")
-            {
-                attackers = GameBoard.WhiteFiguresLocations;
-                defenders = GameBoard.BlackFiguresLocations;
-            }
-            else if (GameBoard.Player == "Black")
-            {
-                attackers = GameBoard.BlackFiguresLocations;
-                defenders = GameBoard.WhiteFiguresLocations;
-            }
-
-            for (int i = 0; i < defenders.Count; i++) // check every defender's figure
-            {
-                defender = GameBoard.GetFigureByPoint(defenders[i]);
-                GameBoard.FromFigureStaleMate = defender;
-                for (int j = 0; j < spaces.Count; j++) // check if any of defenders can move to any of spaces
-                {
-                    space = GameBoard.GetFigureByPoint(spaces[j]);
-                    GameBoard.ToFigureStaleMate = space;
-                    GameBoard.TakeActionForStaleMate();
-                    for (int k = 0; k < attackers.Count; k++) // check every attacker's figure to check opponent's king
-                    {
-                        attacker = GameBoard.GetFigureByPoint(attackers[k]);
-                        GameBoard.FromFigureStaleMate = attacker;
-                        if (ValidateCheck(GameBoard.FromFigureStaleMate)) // if check to opponent's king - current defender can't move to that location
-                        {
-                            cantMove++; // increase quantity of defender's figures that can't move
-                        }
-                        else
-                        {
-                            //return false; // if current move did not cause a check-to-king situation to defender's king - this is not a stalemate
-                        }
-                    }
-                    if (GameBoard.WasSwapped)
-                    {
-                        GameBoard.SwapBack();
-                    }
-                }
-            }
-
-            if (cantMove == defenders.Count) // if quantity of defender's figures that can't move == quantity of defender's figures - this is stalemate
-            {
-                return true;
-            }
-            */
-            #endregion
-
             if ((!CanKingMove(GameBoard.GetFigureByPoint(GameBoard.WhiteKing)) && !CanPlayerMoveFigures("White"))
                 || (!CanKingMove(GameBoard.GetFigureByPoint(GameBoard.BlackKing)) && !CanPlayerMoveFigures("Black")))
             {
@@ -178,6 +119,37 @@ namespace ChessWinForms.Classes
                 }
             }
             return false;
+        }
+
+        public bool ValidateTakePawnOnMove(GameBoardForm gb, ref Figure taker, ref Point position)
+        {
+            List<Figure> opponentsPawns = GetPawns(gb);
+            Figure attacker = null;
+            Figure space = null;
+            for (int i = 0; i < opponentsPawns.Count; i++)
+            {
+                attacker = opponentsPawns[i];
+                attacker.SetPossibleMoves();
+                attacker.SetPossibleAttacks();
+                for (int j = 0; j < gb.FromFigure.FigureWay.Count; j++)
+                {
+                    space = gb.GetFigureByPoint(gb.FromFigure.FigureWay[j]);
+                    if (opponentsPawns[i].Attack(space))
+                    {
+                        position = gb.FromFigure.FigureWay[j];
+                        taker = attacker;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        private List<Figure> GetPawns(GameBoardForm gb)
+        {
+            List<Figure> pawns = gb.AllFigures.Where(x => (x.Side == gb.Opponent && x.GetType() == typeof(Pawn))).ToList();
+            return pawns;
         }
 
         private bool IsWayForCastlingFree(DIRECTIONS d, GameBoardForm gb)
@@ -317,8 +289,10 @@ namespace ChessWinForms.Classes
 
             for (int i = 0; i < gBoard.Count; i++)
             {
-                if (gBoard[i].Location == p)
+                if (gBoard[i].Location.Equals(p))
+                {
                     f = (Figure)gBoard[i].Tag;
+                }
             }
 
             return f;

@@ -96,9 +96,9 @@ namespace ChessWinForms.Classes.Figures
                 SetValidate(ref validate, d);
                 if (validate != null)
                 {
+                    this.FigureWay.Clear();
                     if (validate(this, to, GameBoard))
                     {
-                        this.FigureWay.Add(to.Location);
                         return true;
                     }
                 }

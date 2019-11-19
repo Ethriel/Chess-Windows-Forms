@@ -215,7 +215,10 @@ namespace ChessWinForms.Classes
                 if (player == f.Side)
                     continue;
                 else if (f.Side == "None")
+                {
+                    gameboard.FromFigure.FigureWay.Add(p);
                     counter++;
+                }
                 else if (f.Side == enemy)
                     continue;
             }
@@ -247,7 +250,10 @@ namespace ChessWinForms.Classes
                 if (player == f.Side)
                     continue;
                 else if (f.Side == "None")
+                {
+                    gameboard.FromFigure.FigureWay.Add(p);
                     counter++;
+                }
                 else if (f.Side == enemy)
                     continue;
             }
@@ -278,7 +284,10 @@ namespace ChessWinForms.Classes
                 if (player == f.Side)
                     continue;
                 else if (f.Side == "None")
+                {
+                    gameboard.FromFigure.FigureWay.Add(p);
                     counter++;
+                }
                 else if (f.Side == enemy)
                     continue;
             }
@@ -309,7 +318,10 @@ namespace ChessWinForms.Classes
                 if (player == f.Side)
                     continue;
                 else if (f.Side == "None")
+                {
+                    gameboard.FromFigure.FigureWay.Add(p);
                     counter++;
+                }
                 else if (f.Side == enemy)
                     continue;
             }
@@ -338,7 +350,10 @@ namespace ChessWinForms.Classes
                         if (player == f.Side)
                             continue;
                         else if (f.Side == "None")
+                        {
+                            gameboard.FromFigure.FigureWay.Add(p);
                             counter++;
+                        }
                         else if (f.Side == enemy)
                             continue;
                     }
@@ -370,7 +385,10 @@ namespace ChessWinForms.Classes
                         if (player == f.Side)
                             continue;
                         else if (f.Side == "None")
+                        {
+                            gameboard.FromFigure.FigureWay.Add(p);
                             counter++;
+                        }
                         else if (f.Side == enemy)
                             continue;
                     }

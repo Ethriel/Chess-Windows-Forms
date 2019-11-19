@@ -229,6 +229,87 @@ namespace ChessWinForms.Classes
             }
         }
 
+        static public void TakePawnOnMove(GameBoardForm gb)
+        {
+            string name = "", side = "";
+            Type t = null;
+            int moves = 0;
+            Button b = null;
+            // populate gameboard with buttons
+            for (int i = 0; i < gb.GBoard.RowCount; i++)
+            {
+                for (int j = 0; j < gb.GBoard.ColumnCount; j++)
+                {
+                    b = gb.GetButton();
+                    if ((i % 2 == 0 && j % 2 != 0) || (i % 2 != 0 && j % 2 == 0))
+                    {
+                        b.BackColor = Color.Coral;
+                    }
+                    if ((i % 2 == 0 && j % 2 == 0) || (i % 2 != 0 && j % 2 != 0))
+                    {
+                        b.BackColor = Color.White;
+                    }
+
+                    if ((i == 7 && j == 0) || (i == 7 && j == 7)) // white rooks
+                    {
+                        name = "Rook";
+                        side = "White";
+                        moves = 8;
+                        t = typeof(Rook);
+                    }
+                    else if (i == 7 && j == 4) // white king
+                    {
+                        name = "King";
+                        side = "White";
+                        moves = 1;
+                        t = typeof(King);
+                    }
+                    else if ((i == 0 && j == 0) || (i == 0 && j == 7)) // black rooks
+                    {
+                        name = "Rook";
+                        side = "Black";
+                        moves = 8;
+                        t = typeof(Rook);
+                    }
+                    else if (i == 0 && j == 4) // black king
+                    {
+                        name = "King";
+                        side = "Black";
+                        moves = 1;
+                        t = typeof(King);
+                    }
+                    else if (i == 4 && j == 3) // black pawn
+                    {
+                        name = "Pawn";
+                        side = "Black";
+                        moves = 1;
+                        t = typeof(Pawn);
+                    }
+                    else if (i == 6 && j == 4) // white pawn
+                    {
+                        name = "Pawn";
+                        side = "White";
+                        moves = 2;
+                        t = typeof(Pawn);
+                    }
+                    else
+                    {
+                        name = "Space";
+                        side = "None";
+                        moves = 0;
+                        t = typeof(Space);
+                    }
+                    b.Tag = (Figure)Activator.CreateInstance(t, name, side, moves, 64, gb);
+                    SetButton(ref b, name, side);
+                    gb.GBoard.Controls.Add(b);
+
+                    (b.Tag as Figure).Location = b.Location;
+
+                    gb.DefaultBoardColors.Add(b.BackColor);
+                }
+            }
+        }
+
         static private void SetButton(ref Button b, string name, string side)
         {
             if ((b.Tag as Figure).Name != "Space")

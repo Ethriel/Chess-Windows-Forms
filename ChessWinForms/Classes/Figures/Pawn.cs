@@ -45,45 +45,6 @@ namespace ChessWinForms.Classes.Figures
 
         public override bool Attack(Figure to)
         {
-            this.SetPossibleAttacks();
-            if (to.Side == "None")
-            {
-                return false;
-            }
-            #region OLD
-            /*
-            Point f = this.Location;
-            Point t = to.Location;
-            int x = Math.Abs(f.X - t.X);
-            int y = Math.Abs(f.Y - t.Y);
-            if (x != this.BtnSize || y != this.BtnSize)
-                return false;
-            string side = this.Side;
-            switch (side)
-            {
-                case "White":
-                    {
-                        if (f.Y > t.Y)
-                        {
-                            return true;
-                        }
-                        break;
-                    }
-                case "Black":
-                    {
-                        if (f.Y < t.Y)
-                        {
-                            return true;
-                        }
-                        break;
-                    }
-                default:
-                    break;
-            }
-            return false;
-            */
-            #endregion
-
             for (int i = 0; i < this.PossibleAttacks.Count; i++)
             {
                 if (this.PossibleAttacks[i].Equals(to.Location))

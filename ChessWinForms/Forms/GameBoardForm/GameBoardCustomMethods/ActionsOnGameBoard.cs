@@ -61,6 +61,16 @@ namespace ChessWinForms.Forms.GameBoardForm
             }
             else if (PerformAction(toFigure))
             {
+                if (FromFigure is Pawn)
+                {
+                    Figure taker = null;
+                    Point position = new Point(NullPoint.X, NullPoint.Y);
+                    if (ChessValidator.ValidateTakePawnOnMove(this, ref taker, ref position))
+                    {
+                        TakePawnOnMove(taker, position);
+                        return;
+                    }
+                }
                 Swap();
                 SwitchPlayer();
                 SetFormText();
@@ -95,7 +105,6 @@ namespace ChessWinForms.Forms.GameBoardForm
         {
             FromPoint = new Point(fromFigure.Location.X, fromFigure.Location.Y);
             ToPoint = new Point(toFigure.Location.X, toFigure.Location.Y);
-            Figure moved = null;
             if (posFrom != -1 && posTo != -1)
             {
                 (GBoard.Controls[posFrom].Tag as Figure).HasMoved = true;
@@ -128,24 +137,27 @@ namespace ChessWinForms.Forms.GameBoardForm
                 RefillPointsLists();
                 ResetKingsPositions();
 
-                moved = GetFigureByPoint(ToPoint);
-
-                if (ChessValidator.ValidateCheck(Player))
-                {
-                    Check();
-                    if (ChessValidator.ValidateCheckMate(Player))
-                    {
-                        Checkmate();
-                    }
-                }
-                else
-                {
-                    if (ChessValidator.ValidateStaleMate())
-                    {
-                        StaleMate();
-                    }
-                }
+                GameStatus();
                 ResetPoints();
+            }
+        }
+
+        private void GameStatus()
+        {
+            if (ChessValidator.ValidateCheck(Player))
+            {
+                Check();
+                if (ChessValidator.ValidateCheckMate(Player))
+                {
+                    Checkmate();
+                }
+            }
+            else
+            {
+                if (ChessValidator.ValidateStaleMate())
+                {
+                    StaleMate();
+                }
             }
         }
 
@@ -322,6 +334,33 @@ namespace ChessWinForms.Forms.GameBoardForm
             GBoard.Controls[posForSpaceRook].Tag = generator.GetFigureInSwap(spaceF);
             (GBoard.Controls[posForSpaceRook].Tag as Figure).Location = new Point(tmpRook.Location.X, tmpRook.Location.Y);
             GBoard.Controls[posForSpaceRook].BackgroundImage = null;
+        }
+
+        private void TakePawnOnMove(Figure taker, Point position)
+        {
+            Figure tmpTaker = generator.GetFigureInSwap(taker);
+            Figure tmpSpace = GetFigureByPoint(position);
+
+            int posTaker = GetButtonPosition(tmpTaker);
+            int posSpace = GetButtonPosition(tmpSpace);
+
+            Image takerImg = GBoard.Controls[posTaker].BackgroundImage;
+
+            Point takerLocation = new Point(taker.Location.X, taker.Location.Y);
+            Point spaceLocation = new Point(tmpSpace.Location.X, tmpSpace.Location.Y);
+
+            GBoard.Controls[posTaker].Tag = generator.GetFigureInSwap(tmpSpace);
+            GBoard.Controls[posTaker].BackgroundImage = null;
+            (GBoard.Controls[posTaker].Tag as Figure).Location = takerLocation;
+
+            GBoard.Controls[posSpace].Tag = generator.GetFigureInSwap(tmpTaker);
+            GBoard.Controls[posSpace].BackgroundImage = takerImg;
+            (GBoard.Controls[posSpace].Tag as Figure).Location = spaceLocation;
+
+            int posVictim = GetButtonPosition(FromFigure);
+            GBoard.Controls[posVictim].Tag = generator.GetFigureInSwap(spaceF);
+            (GBoard.Controls[posVictim].Tag as Figure).Location = new Point(FromFigure.Location.X, FromFigure.Location.Y);
+            GBoard.Controls[posVictim].BackgroundImage = null;
         }
 
         #endregion

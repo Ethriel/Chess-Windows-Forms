@@ -69,7 +69,7 @@ namespace ChessWinForms.Forms.GameBoardForm
         public string Player { get; set; }
         public string Opponent { get; set; }
         public string Scenario { get; set; }
-        string PathStandartBoard, PathSavedBoard, PathStaleMate, PathCheckMate, PathCastlingNoBetween, PathCastlingNormal;
+        string PathStandartBoard, PathSavedBoard, PathStaleMate, PathCheckMate, PathCastlingNoBetween, PathCastlingNormal, PathTakePawnOnMove;
         public bool IsCheckmate, WasChecked;
 
         public GameBoardForm()

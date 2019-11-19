@@ -170,6 +170,7 @@ namespace ChessWinForms.Forms.GameBoardForm
             PathCheckMate = @"../../Figures/figures_list_checkmate.xml";
             PathCastlingNoBetween = @"../../Figures/figures_list_castling_no_between.xml";
             PathCastlingNormal = @"../../Figures/figures_list_castling_normal.xml";
+            PathTakePawnOnMove = @"../../Figures/figures_list_take_pawn_on_way.xml";
             SetGameBoard();
             SetInfoTextStart();
             spaceF = generator.GetFigureStart(typeof(Space), "Space", "None", 0, 64, this);

@@ -18,7 +18,7 @@ namespace ChessWinForms.Forms.GameBoardForm
             GBoard.Margin = new Padding(0);
 
             #region DEFAULT
-
+            /*
             if (TryLoadFile(Scenario))
             {
                 SetGameBoardAfterFileLoad();
@@ -27,7 +27,7 @@ namespace ChessWinForms.Forms.GameBoardForm
             {
                 SetGameBoardNoLoad();
             }
-
+            */
             #endregion
 
             #region STALEMATE
@@ -58,7 +58,14 @@ namespace ChessWinForms.Forms.GameBoardForm
             RefillFiguresList();
             RefillPointsLists();
             */
-            //write.WriteFile(PathCastlingNormal, AllFigures);
+            #endregion
+
+            #region TAKE PAWN ON WAY
+
+            SituationsGenerator.TakePawnOnMove(this);
+            RefillFiguresList();
+            RefillPointsLists();
+            //write.WriteFile(PathTakePawnOnWay, AllFigures);
 
             #endregion
         }
@@ -299,6 +306,11 @@ namespace ChessWinForms.Forms.GameBoardForm
                 case "castling_no_between":
                     {
                         path = PathCastlingNoBetween;
+                        break;
+                    }
+                case "take_pawn_on_move":
+                    {
+                        path = PathTakePawnOnMove;
                         break;
                     }
                 default:
