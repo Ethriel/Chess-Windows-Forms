@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ChessWinForms.Forms.GameBoardForm
+namespace ChessWinForms.Forms.nGameBoardForm
 {
     public partial class GameBoardForm
     {
@@ -72,6 +72,19 @@ namespace ChessWinForms.Forms.GameBoardForm
                     }
                 }
                 Swap();
+                
+                if (FromFigure is Pawn)
+                {
+                    if (ChessValidator.ValidatePawnChange(GBoard.Controls[posTo].Tag as Figure))
+                    {
+                        SelectFigure = new SelectFigureToChangeForm(this);
+                        SelectFigure.ShowDialog();
+                        ChangePawn();
+                        (GBoard.Controls[posTo].Tag as Figure).SetAllNeeded();
+                        ResetAll();
+                        GameStatus();
+                    }
+                }
                 SwitchPlayer();
                 SetFormText();
                 AddItemToHistory();
@@ -80,6 +93,7 @@ namespace ChessWinForms.Forms.GameBoardForm
             {
                 MessageBox.Show("Invalid move", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
             fromFigure = null;
             toFigure = null;
             PerformAction = null;
@@ -361,6 +375,15 @@ namespace ChessWinForms.Forms.GameBoardForm
             GBoard.Controls[posVictim].Tag = generator.GetFigureInSwap(spaceF);
             (GBoard.Controls[posVictim].Tag as Figure).Location = new Point(FromFigure.Location.X, FromFigure.Location.Y);
             GBoard.Controls[posVictim].BackgroundImage = null;
+        }
+
+        private void ChangePawn()
+        {
+            Point pawnLocation = (GBoard.Controls[posTo].Tag as Figure).Location;
+            Point newLocation = new Point(pawnLocation.X, pawnLocation.Y);
+            GBoard.Controls[posTo].Tag = generator.GetFigureInSwap(ToChange);
+            (GBoard.Controls[posTo].Tag as Figure).Location = newLocation;
+            GBoard.Controls[posTo].BackgroundImage = Image.FromFile($@"../../pictures/figures/{ToChange.Name.ToLower()}_{ToChange.Side.ToLower()}.png");
         }
 
         #endregion

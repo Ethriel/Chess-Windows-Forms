@@ -1,4 +1,4 @@
-﻿namespace ChessWinForms.Forms.GameBoardForm
+﻿namespace ChessWinForms.Forms.nGameBoardForm
 {
     partial class GameBoardForm
     {

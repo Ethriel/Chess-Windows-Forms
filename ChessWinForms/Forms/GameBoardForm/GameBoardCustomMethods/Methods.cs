@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WriteRead.Classes;
 
-namespace ChessWinForms.Forms.GameBoardForm
+namespace ChessWinForms.Forms.nGameBoardForm
 {
     public partial class GameBoardForm
     {
@@ -96,6 +96,13 @@ namespace ChessWinForms.Forms.GameBoardForm
         #endregion
 
         #region RESETS AND REFILLS
+        private void ResetAll()
+        {
+            ResetPoints();
+            RefillFiguresList();
+            RefillPointsLists();
+        }
+
         private void ResetPoints()
         {
             FromPoint = new Point(NullPoint.X, NullPoint.Y);
@@ -171,9 +178,11 @@ namespace ChessWinForms.Forms.GameBoardForm
             PathCastlingNoBetween = @"../../Figures/figures_list_castling_no_between.xml";
             PathCastlingNormal = @"../../Figures/figures_list_castling_normal.xml";
             PathTakePawnOnMove = @"../../Figures/figures_list_take_pawn_on_way.xml";
+            PathChangePawn = @"../../Figures/figures_list_change_pawn.xml";
             SetGameBoard();
             SetInfoTextStart();
             spaceF = generator.GetFigureStart(typeof(Space), "Space", "None", 0, 64, this);
+            SelectFigure = new SelectFigureToChangeForm(this);
         }
     }
 }

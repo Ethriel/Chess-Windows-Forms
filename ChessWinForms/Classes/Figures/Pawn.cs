@@ -4,15 +4,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChessWinForms.Forms.GameBoardForm;
-using static ChessWinForms.Forms.GameBoardForm.GameBoardForm;
+using ChessWinForms.Forms.nGameBoardForm;
+using static ChessWinForms.Forms.nGameBoardForm.GameBoardForm;
 
 namespace ChessWinForms.Classes.Figures
 {
     [Serializable]
     public class Pawn : Figure
     {
-        
+        public int End { get; set; }
         public Pawn() : base()
         {
 
@@ -27,9 +27,15 @@ namespace ChessWinForms.Classes.Figures
         {
             DIRECTIONs = new List<DIRECTIONS>();
             if (side == "White")
+            {
                 DIRECTIONs.Add(DIRECTIONS.TOP);
+                End = 0;
+            }
             if (side == "Black")
+            {
                 DIRECTIONs.Add(DIRECTIONS.BOT);
+                End = btnSize * 7;
+            }
         }
 
         public override bool Move(Figure to)

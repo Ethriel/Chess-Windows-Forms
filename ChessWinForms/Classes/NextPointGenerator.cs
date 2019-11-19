@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static ChessWinForms.Forms.GameBoardForm.GameBoardForm;
+using static ChessWinForms.Forms.nGameBoardForm.GameBoardForm;
 
 namespace ChessWinForms.Classes
 {

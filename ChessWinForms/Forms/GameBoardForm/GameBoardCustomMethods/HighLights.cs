@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChessWinForms.Forms.GameBoardForm
+namespace ChessWinForms.Forms.nGameBoardForm
 {
     public partial class GameBoardForm
     {

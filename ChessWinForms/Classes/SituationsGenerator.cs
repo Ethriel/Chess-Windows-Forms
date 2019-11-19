@@ -1,5 +1,5 @@
 ﻿using ChessWinForms.Classes.Figures;
-using ChessWinForms.Forms.GameBoardForm;
+using ChessWinForms.Forms.nGameBoardForm;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -286,6 +286,73 @@ namespace ChessWinForms.Classes
                         t = typeof(Pawn);
                     }
                     else if (i == 6 && j == 4) // white pawn
+                    {
+                        name = "Pawn";
+                        side = "White";
+                        moves = 2;
+                        t = typeof(Pawn);
+                    }
+                    else
+                    {
+                        name = "Space";
+                        side = "None";
+                        moves = 0;
+                        t = typeof(Space);
+                    }
+                    b.Tag = (Figure)Activator.CreateInstance(t, name, side, moves, 64, gb);
+                    SetButton(ref b, name, side);
+                    gb.GBoard.Controls.Add(b);
+
+                    (b.Tag as Figure).Location = b.Location;
+
+                    gb.DefaultBoardColors.Add(b.BackColor);
+                }
+            }
+        }
+
+        static public void ChangePawn(GameBoardForm gb)
+        {
+            string name = "", side = "";
+            Type t = null;
+            int moves = 0;
+            Button b = null;
+            // populate gameboard with buttons
+            for (int i = 0; i < gb.GBoard.RowCount; i++)
+            {
+                for (int j = 0; j < gb.GBoard.ColumnCount; j++)
+                {
+                    b = gb.GetButton();
+                    if ((i % 2 == 0 && j % 2 != 0) || (i % 2 != 0 && j % 2 == 0))
+                    {
+                        b.BackColor = Color.Coral;
+                    }
+                    if ((i % 2 == 0 && j % 2 == 0) || (i % 2 != 0 && j % 2 != 0))
+                    {
+                        b.BackColor = Color.White;
+                    }
+
+                    if (i == 7 && j == 4) // white king
+                    {
+                        name = "King";
+                        side = "White";
+                        moves = 1;
+                        t = typeof(King);
+                    }
+                    else if (i == 0 && j == 4) // black king
+                    {
+                        name = "King";
+                        side = "Black";
+                        moves = 1;
+                        t = typeof(King);
+                    }
+                    else if (i == 6 && j == 2) // black pawn
+                    {
+                        name = "Pawn";
+                        side = "Black";
+                        moves = 1;
+                        t = typeof(Pawn);
+                    }
+                    else if (i == 1 && j == 2) // white pawn
                     {
                         name = "Pawn";
                         side = "White";

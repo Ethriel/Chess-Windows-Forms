@@ -1,4 +1,4 @@
-﻿using ChessWinForms.Forms.GameBoardForm;
+﻿using ChessWinForms.Forms.nGameBoardForm;
 using ChessWinForms.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static ChessWinForms.Forms.GameBoardForm.GameBoardForm;
+using static ChessWinForms.Forms.nGameBoardForm.GameBoardForm;
 
 namespace ChessWinForms.Classes.Figures
 {

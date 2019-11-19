@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WriteRead.Classes;
 
-namespace ChessWinForms.Forms.GameBoardForm
+namespace ChessWinForms.Forms.nGameBoardForm
 {
     public delegate bool PerformAction(Figure to);
     [Serializable]
@@ -30,6 +30,7 @@ namespace ChessWinForms.Forms.GameBoardForm
             NULL
         }
         MainForm Base;
+        SelectFigureToChangeForm SelectFigure { get; set; }
         Figure fromFigure, toFigure, spaceF;
         FigureGenerator generator;
         PerformAction PerformAction;
@@ -69,7 +70,9 @@ namespace ChessWinForms.Forms.GameBoardForm
         public string Player { get; set; }
         public string Opponent { get; set; }
         public string Scenario { get; set; }
-        string PathStandartBoard, PathSavedBoard, PathStaleMate, PathCheckMate, PathCastlingNoBetween, PathCastlingNormal, PathTakePawnOnMove;
+        public Figure ToChange { get; set; }
+        string PathStandartBoard, PathSavedBoard, PathStaleMate, PathCheckMate, 
+            PathCastlingNoBetween, PathCastlingNormal, PathTakePawnOnMove, PathChangePawn;
         public bool IsCheckmate, WasChecked;
 
         public GameBoardForm()

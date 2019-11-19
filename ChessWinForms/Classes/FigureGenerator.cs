@@ -1,5 +1,5 @@
 ﻿using ChessWinForms.Classes.Figures;
-using ChessWinForms.Forms.GameBoardForm;
+using ChessWinForms.Forms.nGameBoardForm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +20,7 @@ namespace ChessWinForms.Classes
         public Figure GetFigureStart(Type t, string name, string side, int moves, int btnSize, GameBoardForm gb)
         {
             figure = (Figure)Activator.CreateInstance(t, name, side, moves, btnSize, gb);
-            figure.SetPossibleMoves();
+            //figure.SetPossibleMoves();
             
             return figure;
         }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ChessWinForms.Forms.GameBoardForm
+namespace ChessWinForms.Forms.nGameBoardForm
 {
     public partial class GameBoardForm
     {
@@ -61,12 +61,19 @@ namespace ChessWinForms.Forms.GameBoardForm
             #endregion
 
             #region TAKE PAWN ON WAY
-
+            /*
             SituationsGenerator.TakePawnOnMove(this);
             RefillFiguresList();
             RefillPointsLists();
-            //write.WriteFile(PathTakePawnOnWay, AllFigures);
+            */
+            #endregion
 
+            #region CHANGE PAWN
+            /*
+            SituationsGenerator.ChangePawn(this);
+            RefillFiguresList();
+            RefillPointsLists();
+            */
             #endregion
         }
 

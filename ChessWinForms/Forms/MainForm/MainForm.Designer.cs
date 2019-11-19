@@ -40,6 +40,7 @@
             this.testCastling = new System.Windows.Forms.ToolStripMenuItem();
             this.castlingNormal = new System.Windows.Forms.ToolStripMenuItem();
             this.castlingNoFigures = new System.Windows.Forms.ToolStripMenuItem();
+            this.testTakePawnOnMoveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBG)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -100,7 +101,8 @@
             this.scenario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.testStalemate,
             this.testCheckmate,
-            this.testCastling});
+            this.testCastling,
+            this.testTakePawnOnMoveToolStripMenuItem});
             this.scenario.Name = "scenario";
             this.scenario.Size = new System.Drawing.Size(73, 20);
             this.scenario.Text = "&Scenario...";
@@ -108,14 +110,14 @@
             // testStalemate
             // 
             this.testStalemate.Name = "testStalemate";
-            this.testStalemate.Size = new System.Drawing.Size(157, 22);
+            this.testStalemate.Size = new System.Drawing.Size(203, 22);
             this.testStalemate.Text = "&Test stalemate";
             this.testStalemate.Click += new System.EventHandler(this.testStalemate_Click);
             // 
             // testCheckmate
             // 
             this.testCheckmate.Name = "testCheckmate";
-            this.testCheckmate.Size = new System.Drawing.Size(157, 22);
+            this.testCheckmate.Size = new System.Drawing.Size(203, 22);
             this.testCheckmate.Text = "&Test checkmate";
             this.testCheckmate.Click += new System.EventHandler(this.testCheckmate_Click);
             // 
@@ -125,7 +127,7 @@
             this.castlingNormal,
             this.castlingNoFigures});
             this.testCastling.Name = "testCastling";
-            this.testCastling.Size = new System.Drawing.Size(157, 22);
+            this.testCastling.Size = new System.Drawing.Size(203, 22);
             this.testCastling.Text = "&Test castling";
             // 
             // castlingNormal
@@ -141,6 +143,13 @@
             this.castlingNoFigures.Size = new System.Drawing.Size(253, 22);
             this.castlingNoFigures.Text = "&No figures between king and rook";
             this.castlingNoFigures.Click += new System.EventHandler(this.castlingNoFigures_Click);
+            // 
+            // testTakePawnOnMoveToolStripMenuItem
+            // 
+            this.testTakePawnOnMoveToolStripMenuItem.Name = "testTakePawnOnMoveToolStripMenuItem";
+            this.testTakePawnOnMoveToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.testTakePawnOnMoveToolStripMenuItem.Text = "&Test take pawn on move";
+            this.testTakePawnOnMoveToolStripMenuItem.Click += new System.EventHandler(this.testTakePawnOnMoveToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -176,6 +185,7 @@
         private System.Windows.Forms.ToolStripMenuItem testCastling;
         private System.Windows.Forms.ToolStripMenuItem castlingNormal;
         private System.Windows.Forms.ToolStripMenuItem castlingNoFigures;
+        private System.Windows.Forms.ToolStripMenuItem testTakePawnOnMoveToolStripMenuItem;
     }
 }
 

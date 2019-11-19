@@ -1,5 +1,5 @@
 ﻿using ChessWinForms.Classes.Figures;
-using ChessWinForms.Forms.GameBoardForm;
+using ChessWinForms.Forms.nGameBoardForm;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static ChessWinForms.Forms.GameBoardForm.GameBoardForm;
+using static ChessWinForms.Forms.nGameBoardForm.GameBoardForm;
 
 namespace ChessWinForms.Classes
 {
@@ -141,6 +141,16 @@ namespace ChessWinForms.Classes
                         return true;
                     }
                 }
+            }
+
+            return false;
+        }
+
+        public bool ValidatePawnChange(Figure pawn)
+        {
+            if (pawn.Location.Y == (pawn as Pawn).End)
+            {
+                return true;
             }
 
             return false;

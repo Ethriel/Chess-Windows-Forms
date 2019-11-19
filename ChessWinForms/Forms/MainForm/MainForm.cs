@@ -1,4 +1,4 @@
-﻿using ChessWinForms.Forms.GameBoardForm;
+﻿using ChessWinForms.Forms.nGameBoardForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,6 +61,12 @@ namespace ChessWinForms
         private void castlingNoFigures_Click(object sender, EventArgs e)
         {
             GameBoard = new GameBoardForm(this, "castling_no_between");
+            GameBoard.ShowDialog();
+        }
+
+        private void testTakePawnOnMoveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GameBoard = new GameBoardForm(this, "take_pawn_on_move");
             GameBoard.ShowDialog();
         }
     }

@@ -1,4 +1,4 @@
-﻿using ChessWinForms.Forms.GameBoardForm;
+﻿using ChessWinForms.Forms.nGameBoardForm;
 using ChessWinForms.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-using static ChessWinForms.Forms.GameBoardForm.GameBoardForm;
+using static ChessWinForms.Forms.nGameBoardForm.GameBoardForm;
 
 namespace ChessWinForms.Classes.Figures
 {
@@ -63,6 +63,10 @@ namespace ChessWinForms.Classes.Figures
                 (this as King).Surrounding = (f as King).Surrounding;
             }
             this.PossibleAttacks = f.PossibleAttacks;
+            if(this is Pawn && f is Pawn)
+            {
+                (this as Pawn).End = (f as Pawn).End;
+            }
         }
 
         public Figure(string name, string side, int moves, int btnSize, GameBoardForm gb)
