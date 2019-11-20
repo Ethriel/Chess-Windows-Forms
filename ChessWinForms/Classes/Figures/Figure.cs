@@ -97,6 +97,11 @@ namespace ChessWinForms.Classes.Figures
             DIRECTIONS d = DirectionValidator.GetDirection(this.Location, to.Location);
             if (DIRECTIONs.Contains(d))
             {
+                if ((Math.Abs(this.Location.Y - to.Location.Y) / BtnSize) > this.Moves
+                || (Math.Abs(this.Location.X - to.Location.X) / BtnSize) > this.Moves)
+                {
+                    return false;
+                }
                 SetValidate(ref validate, d);
                 if (validate != null)
                 {
@@ -115,17 +120,14 @@ namespace ChessWinForms.Classes.Figures
             DIRECTIONS d = DirectionValidator.GetDirection(this.Location, to.Location);
             if (this.DIRECTIONs.Contains(d))
             {
-                if ((Math.Abs(this.Location.Y - to.Location.Y) / BtnSize) != this.Moves
-                && (Math.Abs(this.Location.X - to.Location.X) / BtnSize) != this.Moves)
+                
+                to = GetFigureForAttack(to);
+                if (this.Move(to))
                 {
-                    return false;
+                    return true;
                 }
             }
-            to = GetFigureForAttack(to);
-            if (this.Move(to))
-            {
-                return true;
-            }
+            
             return false;
         }
 
@@ -200,49 +202,65 @@ namespace ChessWinForms.Classes.Figures
 
         public virtual List<Point> SetHighLightPoints()
         {
-            PossibleMoves.Clear();
+            List<Point> defender = null;
+            if (this.Side == "White")
+            {
+                defender = GameBoard.BlackFiguresLocations;
+            }
+            else
+            {
+                defender = GameBoard.WhiteFiguresLocations;
+            }
             SetPossibleMoves();
             List<Point> tmp = new List<Point>(this.PossibleMoves.ToArray());
+            for (int i = 0; i < defender.Count; i++)
+            {
+                if (this.Attack(GameBoard.GetFigureByPoint(defender[i])))
+                {
+                    tmp.Add(defender[i]);
+                }
+            }
             return tmp;
         }
 
         public virtual void SetPossibleMoves()
         {
+            PossibleMoves.Clear();
             if (this is Pawn)
                 (this as Pawn).SetMoves();
 
             List<Point> tmp = new List<Point>();
+            List<Point> defender = null;
             Point curr = this.Location;
-
-            string enemy = "";
-
-            if (this.Side == "White")
-                enemy = "Black";
-            else
-                enemy = "White";
-
             DIRECTIONS d = DIRECTIONS.NULL;
 
-            List<Point> defender = null;
-            if (enemy == "White")
-                defender = GameBoard.WhiteFiguresLocations;
-            else
+
+            if (this.Side == "White")
+            {
                 defender = GameBoard.BlackFiguresLocations;
+            }
+            else
+            {
+                defender = GameBoard.WhiteFiguresLocations;
+            }
+
+
+            //if (enemy == "White")
+            //    defender = GameBoard.WhiteFiguresLocations;
+            //else
+            //    defender = GameBoard.BlackFiguresLocations;
+
             for (int i = 0; i < DIRECTIONs.Count; i++)
             {
                 d = this.DIRECTIONs[i];
-                for (int j = 0; j < GameBoard.SpacesLocations.Count; j++)
+                for (int j = 0; j < this.Moves; j++)
                 {
-                    if (this.Move(GameBoard.GetFigureByPoint(GameBoard.SpacesLocations[j])))
+                    for (int k = 0; k < GameBoard.SpacesLocations.Count; k++)
                     {
-                        tmp.Add(GameBoard.SpacesLocations[j]);
-                    }
-                }
-                for (int j = 0; j < defender.Count; j++)
-                {
-                    if (this.Attack(GameBoard.GetFigureByPoint(defender[j])))
-                    {
-                        tmp.Add(defender[j]);
+                        if (this.Move(GameBoard.GetFigureByPoint(GameBoard.SpacesLocations[k])) && !tmp.Contains(GameBoard.SpacesLocations[k]))
+                        {
+                            tmp.Add(GameBoard.SpacesLocations[k]);
+                        }
                     }
                 }
             }

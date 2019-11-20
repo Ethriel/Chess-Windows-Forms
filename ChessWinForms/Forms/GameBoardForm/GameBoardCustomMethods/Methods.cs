@@ -101,6 +101,13 @@ namespace ChessWinForms.Forms.nGameBoardForm
             ResetPoints();
             RefillFiguresList();
             RefillPointsLists();
+            ResetKingsPositions();
+        }
+
+        private void ResetKingsPositions()
+        {
+            WhiteKing = WhiteFiguresLocations.Find(x => GetFigureByPoint(x).Name == "King");
+            BlackKing = BlackFiguresLocations.Find(x => GetFigureByPoint(x).Name == "King");
         }
 
         private void ResetPoints()

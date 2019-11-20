@@ -41,9 +41,12 @@ namespace ChessWinForms.Classes
                 king = GameBoard.GetFigureByPoint(GameBoard.WhiteKing);
             }
 
+            king.SetAllNeeded();
+
             for (int i = 0; i < attackers.Count; i++)
             {
                 attacker = GameBoard.GetFigureByPoint(attackers[i]);
+                attacker.SetAllNeeded();
                 if (attacker.Attack(king))
                 {
                     return true;
@@ -67,23 +70,19 @@ namespace ChessWinForms.Classes
                 king = GameBoard.GetFigureByPoint(GameBoard.WhiteKing);
             }
 
+            king.SetAllNeeded();
+
             for (int i = 0; i < attackers.Count; i++)
             {
                 attacker = GameBoard.GetFigureByPoint(attackers[i]);
-                if (CanKingMove(king) || CanKingBeCovered(king, attacker) || CanAttackerBeTaken(attacker))
+                attacker.SetAllNeeded();
+                if (!CanKingMove(king) && !CanKingBeCovered(king, attacker) && !CanAttackerBeTaken(attacker))
                 {
                     return true;
                 }
             }
 
-            if (CanKingMove(king) || CanKingBeCovered(king, attacker) || CanAttackerBeTaken(attacker))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return false;
         }
 
         public bool ValidateStaleMate()

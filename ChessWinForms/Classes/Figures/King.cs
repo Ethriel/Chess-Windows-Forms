@@ -48,11 +48,6 @@ namespace ChessWinForms.Classes.Figures
             {
                 return false;
             }
-            if ((Math.Abs(this.Location.Y - to.Location.Y) / BtnSize) != this.Moves
-                && (Math.Abs(this.Location.X - to.Location.X) / BtnSize) != this.Moves)
-            {
-                return false;
-            }
             return base.Move(to);
         }
 
