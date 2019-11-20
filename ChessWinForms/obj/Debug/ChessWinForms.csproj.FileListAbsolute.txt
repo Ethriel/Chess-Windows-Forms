@@ -1,4 +1,3 @@
-C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.csprojAssemblyReference.cache
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\bin\Debug\ChessWinForms.exe.config
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\bin\Debug\ChessWinForms.exe
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\bin\Debug\ChessWinForms.pdb
@@ -6,12 +5,13 @@ C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\bin\Debug\WriteRead.dll
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\bin\Debug\WriteRead.pdb
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.Forms.nGameBoardForm.GameBoardForm.resources
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.MainForm.resources
+C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.Forms.SelectFigureToChangeForm.resources
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.Properties.Resources.resources
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.csproj.GenerateResource.cache
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.csproj.CopyComplete
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.exe
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.pdb
-C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.Forms.nGameBoardForm.GameBoardForm.resources
-C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.Forms.SelectFigureToChangeForm.resources

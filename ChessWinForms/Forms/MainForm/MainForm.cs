@@ -23,51 +23,62 @@ namespace ChessWinForms
         {
             pbxBG.Image = Image.FromFile(@"../../pictures/chess_background.jpg");
             this.Text = "Chess";
-            //GameBoard = new GameBoardForm();
-            //GameBoard.ShowDialog();
-            //this.Close();
         }
 
-        private void newGame_Click(object sender, EventArgs e)
+        private void Menu_Item_Click(object sender, EventArgs e)
         {
-            GameBoard = new GameBoardForm(this, "standard");
-            GameBoard.ShowDialog();
-        }
-
-        private void loadSavedGame_Click(object sender, EventArgs e)
-        {
-            GameBoard = new GameBoardForm(this, "saved");
-            GameBoard.ShowDialog();
-        }
-
-        private void testStalemate_Click(object sender, EventArgs e)
-        {
-            GameBoard = new GameBoardForm(this, "stalemate");
-            GameBoard.ShowDialog();
-        }
-
-        private void testCheckmate_Click(object sender, EventArgs e)
-        {
-            GameBoard = new GameBoardForm(this, "checkmate");
-            GameBoard.ShowDialog();
-        }
-
-        private void castlingNormal_Click(object sender, EventArgs e)
-        {
-            GameBoard = new GameBoardForm(this, "castling_normal");
-            GameBoard.ShowDialog();
-        }
-
-        private void castlingNoFigures_Click(object sender, EventArgs e)
-        {
-            GameBoard = new GameBoardForm(this, "castling_no_between");
-            GameBoard.ShowDialog();
-        }
-
-        private void testTakePawnOnMoveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GameBoard = new GameBoardForm(this, "take_pawn_on_move");
-            GameBoard.ShowDialog();
+            ToolStripMenuItem item = sender as ToolStripMenuItem;
+            string scenario = "";
+            switch (item.Text)
+            {
+                case "&New game":
+                    {
+                        scenario = "standard";
+                        break;
+                    }
+                case "&Load saved game":
+                    {
+                        scenario = "saved";
+                        break;
+                    }
+                case "&Test stalemate":
+                    {
+                        scenario = "stalemate";
+                        break;
+                    }
+                case "&Test checkmate":
+                    {
+                        scenario = "checkmate";
+                        break;
+                    }
+                case "&Normal":
+                    {
+                        scenario = "castling_normal";
+                        break;
+                    }
+                case "&No figures between king and rook":
+                    {
+                        scenario = "castling_no_between";
+                        break;
+                    }
+                case "&Test take pawn on move":
+                    {
+                        scenario = "take_pawn_on_move";
+                        break;
+                    }
+                case "&Test change pawn":
+                    {
+                        scenario = "change_pawn";
+                        break;
+                    }
+                default:
+                    break;
+            }
+            if (!string.IsNullOrWhiteSpace(scenario))
+            {
+                GameBoard = new GameBoardForm(this, scenario);
+                GameBoard.ShowDialog();
+            }
         }
     }
 }

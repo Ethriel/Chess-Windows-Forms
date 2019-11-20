@@ -18,7 +18,7 @@ namespace ChessWinForms.Forms.nGameBoardForm
             GBoard.Margin = new Padding(0);
 
             #region DEFAULT
-            /*
+            
             if (TryLoadFile(Scenario))
             {
                 SetGameBoardAfterFileLoad();
@@ -27,7 +27,7 @@ namespace ChessWinForms.Forms.nGameBoardForm
             {
                 SetGameBoardNoLoad();
             }
-            */
+            
             #endregion
 
             #region STALEMATE
@@ -318,6 +318,11 @@ namespace ChessWinForms.Forms.nGameBoardForm
                 case "take_pawn_on_move":
                     {
                         path = PathTakePawnOnMove;
+                        break;
+                    }
+                case "change_pawn":
+                    {
+                        path = PathChangePawn;
                         break;
                     }
                 default:

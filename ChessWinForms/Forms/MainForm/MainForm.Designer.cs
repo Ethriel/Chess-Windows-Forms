@@ -40,7 +40,8 @@
             this.testCastling = new System.Windows.Forms.ToolStripMenuItem();
             this.castlingNormal = new System.Windows.Forms.ToolStripMenuItem();
             this.castlingNoFigures = new System.Windows.Forms.ToolStripMenuItem();
-            this.testTakePawnOnMoveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testTakePawnOnMove = new System.Windows.Forms.ToolStripMenuItem();
+            this.testChangePawn = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBG)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -79,22 +80,22 @@
             this.newGame,
             this.loadSavedGame});
             this.game.Name = "game";
-            this.game.Size = new System.Drawing.Size(59, 20);
-            this.game.Text = "&Game...";
+            this.game.Size = new System.Drawing.Size(50, 20);
+            this.game.Text = "&Game";
             // 
             // newGame
             // 
             this.newGame.Name = "newGame";
-            this.newGame.Size = new System.Drawing.Size(166, 22);
+            this.newGame.Size = new System.Drawing.Size(180, 22);
             this.newGame.Text = "&New game";
-            this.newGame.Click += new System.EventHandler(this.newGame_Click);
+            this.newGame.Click += new System.EventHandler(this.Menu_Item_Click);
             // 
             // loadSavedGame
             // 
             this.loadSavedGame.Name = "loadSavedGame";
-            this.loadSavedGame.Size = new System.Drawing.Size(166, 22);
+            this.loadSavedGame.Size = new System.Drawing.Size(180, 22);
             this.loadSavedGame.Text = "&Load saved game";
-            this.loadSavedGame.Click += new System.EventHandler(this.loadSavedGame_Click);
+            this.loadSavedGame.Click += new System.EventHandler(this.Menu_Item_Click);
             // 
             // scenario
             // 
@@ -102,24 +103,25 @@
             this.testStalemate,
             this.testCheckmate,
             this.testCastling,
-            this.testTakePawnOnMoveToolStripMenuItem});
+            this.testTakePawnOnMove,
+            this.testChangePawn});
             this.scenario.Name = "scenario";
-            this.scenario.Size = new System.Drawing.Size(73, 20);
-            this.scenario.Text = "&Scenario...";
+            this.scenario.Size = new System.Drawing.Size(64, 20);
+            this.scenario.Text = "&Scenario";
             // 
             // testStalemate
             // 
             this.testStalemate.Name = "testStalemate";
             this.testStalemate.Size = new System.Drawing.Size(203, 22);
             this.testStalemate.Text = "&Test stalemate";
-            this.testStalemate.Click += new System.EventHandler(this.testStalemate_Click);
+            this.testStalemate.Click += new System.EventHandler(this.Menu_Item_Click);
             // 
             // testCheckmate
             // 
             this.testCheckmate.Name = "testCheckmate";
             this.testCheckmate.Size = new System.Drawing.Size(203, 22);
             this.testCheckmate.Text = "&Test checkmate";
-            this.testCheckmate.Click += new System.EventHandler(this.testCheckmate_Click);
+            this.testCheckmate.Click += new System.EventHandler(this.Menu_Item_Click);
             // 
             // testCastling
             // 
@@ -135,21 +137,28 @@
             this.castlingNormal.Name = "castlingNormal";
             this.castlingNormal.Size = new System.Drawing.Size(253, 22);
             this.castlingNormal.Text = "&Normal";
-            this.castlingNormal.Click += new System.EventHandler(this.castlingNormal_Click);
+            this.castlingNormal.Click += new System.EventHandler(this.Menu_Item_Click);
             // 
             // castlingNoFigures
             // 
             this.castlingNoFigures.Name = "castlingNoFigures";
             this.castlingNoFigures.Size = new System.Drawing.Size(253, 22);
             this.castlingNoFigures.Text = "&No figures between king and rook";
-            this.castlingNoFigures.Click += new System.EventHandler(this.castlingNoFigures_Click);
+            this.castlingNoFigures.Click += new System.EventHandler(this.Menu_Item_Click);
             // 
-            // testTakePawnOnMoveToolStripMenuItem
+            // testTakePawnOnMove
             // 
-            this.testTakePawnOnMoveToolStripMenuItem.Name = "testTakePawnOnMoveToolStripMenuItem";
-            this.testTakePawnOnMoveToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.testTakePawnOnMoveToolStripMenuItem.Text = "&Test take pawn on move";
-            this.testTakePawnOnMoveToolStripMenuItem.Click += new System.EventHandler(this.testTakePawnOnMoveToolStripMenuItem_Click);
+            this.testTakePawnOnMove.Name = "testTakePawnOnMove";
+            this.testTakePawnOnMove.Size = new System.Drawing.Size(203, 22);
+            this.testTakePawnOnMove.Text = "&Test take pawn on move";
+            this.testTakePawnOnMove.Click += new System.EventHandler(this.Menu_Item_Click);
+            // 
+            // testChangePawn
+            // 
+            this.testChangePawn.Name = "testChangePawn";
+            this.testChangePawn.Size = new System.Drawing.Size(203, 22);
+            this.testChangePawn.Text = "&Test change pawn";
+            this.testChangePawn.Click += new System.EventHandler(this.Menu_Item_Click);
             // 
             // MainForm
             // 
@@ -185,7 +194,8 @@
         private System.Windows.Forms.ToolStripMenuItem testCastling;
         private System.Windows.Forms.ToolStripMenuItem castlingNormal;
         private System.Windows.Forms.ToolStripMenuItem castlingNoFigures;
-        private System.Windows.Forms.ToolStripMenuItem testTakePawnOnMoveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testTakePawnOnMove;
+        private System.Windows.Forms.ToolStripMenuItem testChangePawn;
     }
 }
 
