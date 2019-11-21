@@ -120,12 +120,18 @@ namespace ChessWinForms.Forms.nGameBoardForm
 
         private void GameBoardForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
             if (!IsCheckmate)
             {
                 RefillFiguresList();
                 write.WriteFile(PathSavedBoard, AllFigures);
             }
         }
+
 
     }
 }

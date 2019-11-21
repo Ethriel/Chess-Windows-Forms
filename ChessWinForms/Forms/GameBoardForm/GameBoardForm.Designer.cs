@@ -42,6 +42,7 @@
             this.panelInfo = new System.Windows.Forms.Panel();
             this.labInfoOnto = new System.Windows.Forms.Label();
             this.labInfoSelected = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRed)).BeginInit();
@@ -182,12 +183,23 @@
             this.labInfoSelected.TabIndex = 0;
             this.labInfoSelected.Text = "label1";
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(782, 509);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "Save game";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // GameBoardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(861, 534);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.lbxHistoryOfMoves);
             this.Controls.Add(this.labViolet);
@@ -227,5 +239,6 @@
         private System.Windows.Forms.Label labInfoOnto;
         private System.Windows.Forms.Label labInfoSelected;
         public System.Windows.Forms.TableLayoutPanel GBoard;
+        private System.Windows.Forms.Button btnSave;
     }
 }

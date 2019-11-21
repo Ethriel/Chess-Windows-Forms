@@ -65,22 +65,6 @@
         <X>0</X>
         <Y>128</Y>
       </Point>
-      <Point>
-        <X>256</X>
-        <Y>128</Y>
-      </Point>
-      <Point>
-        <X>320</X>
-        <Y>192</Y>
-      </Point>
-      <Point>
-        <X>384</X>
-        <Y>256</Y>
-      </Point>
-      <Point>
-        <X>448</X>
-        <Y>320</Y>
-      </Point>
     </PossibleMoves>
     <PossibleAttacks>
       <Point>
@@ -94,22 +78,6 @@
       <Point>
         <X>0</X>
         <Y>128</Y>
-      </Point>
-      <Point>
-        <X>256</X>
-        <Y>128</Y>
-      </Point>
-      <Point>
-        <X>320</X>
-        <Y>192</Y>
-      </Point>
-      <Point>
-        <X>384</X>
-        <Y>256</Y>
-      </Point>
-      <Point>
-        <X>448</X>
-        <Y>320</Y>
       </Point>
     </PossibleAttacks>
     <Name>Bishop</Name>
@@ -136,45 +104,45 @@
     </DIRECTIONs>
     <PossibleMoves>
       <Point>
-        <X>128</X>
-        <Y>64</Y>
-      </Point>
-      <Point>
         <X>192</X>
         <Y>64</Y>
       </Point>
       <Point>
-        <X>64</X>
-        <Y>128</Y>
+        <X>256</X>
+        <Y>64</Y>
       </Point>
       <Point>
         <X>192</X>
         <Y>128</Y>
       </Point>
       <Point>
-        <X>0</X>
+        <X>320</X>
+        <Y>128</Y>
+      </Point>
+      <Point>
+        <X>384</X>
         <Y>192</Y>
       </Point>
     </PossibleMoves>
     <PossibleAttacks>
       <Point>
-        <X>128</X>
-        <Y>64</Y>
-      </Point>
-      <Point>
         <X>192</X>
         <Y>64</Y>
       </Point>
       <Point>
-        <X>64</X>
-        <Y>128</Y>
+        <X>256</X>
+        <Y>64</Y>
       </Point>
       <Point>
         <X>192</X>
         <Y>128</Y>
       </Point>
       <Point>
-        <X>0</X>
+        <X>320</X>
+        <Y>128</Y>
+      </Point>
+      <Point>
+        <X>384</X>
         <Y>192</Y>
       </Point>
     </PossibleAttacks>
@@ -200,8 +168,34 @@
       <DIRECTIONS>DIAGONAL_RB_LT</DIRECTIONS>
       <DIRECTIONS>DIAGONAL_RT_LB</DIRECTIONS>
     </DIRECTIONs>
-    <PossibleMoves />
-    <PossibleAttacks />
+    <PossibleMoves>
+      <Point>
+        <X>320</X>
+        <Y>0</Y>
+      </Point>
+      <Point>
+        <X>256</X>
+        <Y>64</Y>
+      </Point>
+      <Point>
+        <X>192</X>
+        <Y>64</Y>
+      </Point>
+    </PossibleMoves>
+    <PossibleAttacks>
+      <Point>
+        <X>320</X>
+        <Y>0</Y>
+      </Point>
+      <Point>
+        <X>256</X>
+        <Y>64</Y>
+      </Point>
+      <Point>
+        <X>192</X>
+        <Y>64</Y>
+      </Point>
+    </PossibleAttacks>
     <Name>King</Name>
     <Side>Black</Side>
     <Moves>1</Moves>
@@ -227,29 +221,13 @@
       </Point>
       <Point>
         <X>192</X>
+        <Y>64</Y>
+      </Point>
+      <Point>
+        <X>192</X>
         <Y>0</Y>
       </Point>
     </Surrounding>
-  </Figure>
-  <Figure xsi:type="Bishop">
-    <DIRECTIONs>
-      <DIRECTIONS>DIAGONAL_LB_RT</DIRECTIONS>
-      <DIRECTIONS>DIAGONAL_LT_RB</DIRECTIONS>
-      <DIRECTIONS>DIAGONAL_RB_LT</DIRECTIONS>
-      <DIRECTIONS>DIAGONAL_RT_LB</DIRECTIONS>
-    </DIRECTIONs>
-    <PossibleMoves />
-    <PossibleAttacks />
-    <Name>Bishop</Name>
-    <Side>Black</Side>
-    <Moves>8</Moves>
-    <HasMoved>false</HasMoved>
-    <Location>
-      <X>320</X>
-      <Y>0</Y>
-    </Location>
-    <BtnSize>64</BtnSize>
-    <FigureWay />
   </Figure>
   <Figure xsi:type="Space">
     <DIRECTIONs />
@@ -258,6 +236,47 @@
     <Name>Space</Name>
     <Side>None</Side>
     <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>320</X>
+      <Y>0</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Knight">
+    <DIRECTIONs />
+    <PossibleMoves>
+      <Point>
+        <X>320</X>
+        <Y>128</Y>
+      </Point>
+      <Point>
+        <X>256</X>
+        <Y>64</Y>
+      </Point>
+      <Point>
+        <X>448</X>
+        <Y>128</Y>
+      </Point>
+    </PossibleMoves>
+    <PossibleAttacks>
+      <Point>
+        <X>320</X>
+        <Y>128</Y>
+      </Point>
+      <Point>
+        <X>256</X>
+        <Y>64</Y>
+      </Point>
+      <Point>
+        <X>448</X>
+        <Y>128</Y>
+      </Point>
+    </PossibleAttacks>
+    <Name>Knight</Name>
+    <Side>Black</Side>
+    <Moves>-1</Moves>
     <HasMoved>false</HasMoved>
     <Location>
       <X>384</X>
@@ -273,18 +292,8 @@
       <DIRECTIONS>BOT</DIRECTIONS>
       <DIRECTIONS>LEFT</DIRECTIONS>
     </DIRECTIONs>
-    <PossibleMoves>
-      <Point>
-        <X>384</X>
-        <Y>0</Y>
-      </Point>
-    </PossibleMoves>
-    <PossibleAttacks>
-      <Point>
-        <X>384</X>
-        <Y>0</Y>
-      </Point>
-    </PossibleAttacks>
+    <PossibleMoves />
+    <PossibleAttacks />
     <Name>Rook</Name>
     <Side>Black</Side>
     <Moves>8</Moves>
@@ -333,6 +342,7 @@
     <End>0</End>
   </Figure>
   <Figure xsi:type="Space">
+    <DIRECTIONs />
     <PossibleMoves />
     <PossibleAttacks />
     <Name>Space</Name>
@@ -346,12 +356,33 @@
     <BtnSize>64</BtnSize>
     <FigureWay />
   </Figure>
-  <Figure xsi:type="Space">
-    <PossibleMoves />
-    <PossibleAttacks />
-    <Name>Space</Name>
-    <Side>None</Side>
-    <Moves>0</Moves>
+  <Figure xsi:type="Pawn">
+    <DIRECTIONs>
+      <DIRECTIONS>BOT</DIRECTIONS>
+    </DIRECTIONs>
+    <PossibleMoves>
+      <Point>
+        <X>128</X>
+        <Y>128</Y>
+      </Point>
+      <Point>
+        <X>128</X>
+        <Y>192</Y>
+      </Point>
+    </PossibleMoves>
+    <PossibleAttacks>
+      <Point>
+        <X>64</X>
+        <Y>128</Y>
+      </Point>
+      <Point>
+        <X>192</X>
+        <Y>128</Y>
+      </Point>
+    </PossibleAttacks>
+    <Name>Pawn</Name>
+    <Side>Black</Side>
+    <Moves>2</Moves>
     <HasMoved>false</HasMoved>
     <Location>
       <X>128</X>
@@ -359,6 +390,7 @@
     </Location>
     <BtnSize>64</BtnSize>
     <FigureWay />
+    <End>0</End>
   </Figure>
   <Figure xsi:type="Space">
     <DIRECTIONs />
@@ -375,33 +407,13 @@
     <BtnSize>64</BtnSize>
     <FigureWay />
   </Figure>
-  <Figure xsi:type="Pawn">
-    <DIRECTIONs>
-      <DIRECTIONS>BOT</DIRECTIONS>
-    </DIRECTIONs>
-    <PossibleMoves>
-      <Point>
-        <X>256</X>
-        <Y>128</Y>
-      </Point>
-      <Point>
-        <X>256</X>
-        <Y>192</Y>
-      </Point>
-    </PossibleMoves>
-    <PossibleAttacks>
-      <Point>
-        <X>192</X>
-        <Y>128</Y>
-      </Point>
-      <Point>
-        <X>320</X>
-        <Y>128</Y>
-      </Point>
-    </PossibleAttacks>
-    <Name>Pawn</Name>
-    <Side>Black</Side>
-    <Moves>2</Moves>
+  <Figure xsi:type="Space">
+    <DIRECTIONs />
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
     <HasMoved>false</HasMoved>
     <Location>
       <X>256</X>
@@ -409,7 +421,6 @@
     </Location>
     <BtnSize>64</BtnSize>
     <FigureWay />
-    <End>0</End>
   </Figure>
   <Figure xsi:type="Pawn">
     <DIRECTIONs>
@@ -550,6 +561,7 @@
     <FigureWay />
   </Figure>
   <Figure xsi:type="Space">
+    <DIRECTIONs />
     <PossibleMoves />
     <PossibleAttacks />
     <Name>Space</Name>
@@ -578,20 +590,37 @@
     <BtnSize>64</BtnSize>
     <FigureWay />
   </Figure>
-  <Figure xsi:type="Space">
-    <DIRECTIONs />
-    <PossibleMoves />
-    <PossibleAttacks />
-    <Name>Space</Name>
-    <Side>None</Side>
-    <Moves>0</Moves>
-    <HasMoved>false</HasMoved>
+  <Figure xsi:type="Pawn">
+    <DIRECTIONs>
+      <DIRECTIONS>BOT</DIRECTIONS>
+    </DIRECTIONs>
+    <PossibleMoves>
+      <Point>
+        <X>256</X>
+        <Y>192</Y>
+      </Point>
+    </PossibleMoves>
+    <PossibleAttacks>
+      <Point>
+        <X>192</X>
+        <Y>192</Y>
+      </Point>
+      <Point>
+        <X>320</X>
+        <Y>192</Y>
+      </Point>
+    </PossibleAttacks>
+    <Name>Pawn</Name>
+    <Side>Black</Side>
+    <Moves>1</Moves>
+    <HasMoved>true</HasMoved>
     <Location>
       <X>256</X>
       <Y>128</Y>
     </Location>
     <BtnSize>64</BtnSize>
     <FigureWay />
+    <End>0</End>
   </Figure>
   <Figure xsi:type="Space">
     <DIRECTIONs />
@@ -654,6 +683,7 @@
     <FigureWay />
   </Figure>
   <Figure xsi:type="Space">
+    <DIRECTIONs />
     <PossibleMoves />
     <PossibleAttacks />
     <Name>Space</Name>
@@ -686,7 +716,12 @@
     <DIRECTIONs>
       <DIRECTIONS>BOT</DIRECTIONS>
     </DIRECTIONs>
-    <PossibleMoves />
+    <PossibleMoves>
+      <Point>
+        <X>192</X>
+        <Y>256</Y>
+      </Point>
+    </PossibleMoves>
     <PossibleAttacks>
       <Point>
         <X>128</X>
@@ -769,12 +804,23 @@
     <BtnSize>64</BtnSize>
     <FigureWay />
   </Figure>
-  <Figure xsi:type="Queen">
+  <Figure xsi:type="Space">
+    <DIRECTIONs />
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
+    <Location>
+      <X>0</X>
+      <Y>256</Y>
+    </Location>
+    <BtnSize>64</BtnSize>
+    <FigureWay />
+  </Figure>
+  <Figure xsi:type="Bishop">
     <DIRECTIONs>
-      <DIRECTIONS>TOP</DIRECTIONS>
-      <DIRECTIONS>RIGHT</DIRECTIONS>
-      <DIRECTIONS>BOT</DIRECTIONS>
-      <DIRECTIONS>LEFT</DIRECTIONS>
       <DIRECTIONS>DIAGONAL_LB_RT</DIRECTIONS>
       <DIRECTIONS>DIAGONAL_LT_RB</DIRECTIONS>
       <DIRECTIONS>DIAGONAL_RB_LT</DIRECTIONS>
@@ -782,137 +828,90 @@
     </DIRECTIONs>
     <PossibleMoves>
       <Point>
-        <X>192</X>
+        <X>320</X>
+        <Y>0</Y>
+      </Point>
+      <Point>
+        <X>256</X>
         <Y>64</Y>
       </Point>
       <Point>
-        <X>0</X>
-        <Y>128</Y>
-      </Point>
-      <Point>
-        <X>128</X>
-        <Y>128</Y>
-      </Point>
-      <Point>
-        <X>0</X>
-        <Y>192</Y>
-      </Point>
-      <Point>
-        <X>64</X>
-        <Y>192</Y>
-      </Point>
-      <Point>
-        <X>0</X>
-        <Y>320</Y>
-      </Point>
-      <Point>
-        <X>64</X>
-        <Y>320</Y>
-      </Point>
-      <Point>
-        <X>128</X>
-        <Y>384</Y>
-      </Point>
-      <Point>
         <X>192</X>
-        <Y>448</Y>
+        <Y>128</Y>
+      </Point>
+      <Point>
+        <X>0</X>
+        <Y>192</Y>
+      </Point>
+      <Point>
+        <X>128</X>
+        <Y>192</Y>
+      </Point>
+      <Point>
+        <X>0</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>128</X>
+        <Y>320</Y>
       </Point>
     </PossibleMoves>
     <PossibleAttacks>
       <Point>
-        <X>192</X>
+        <X>320</X>
+        <Y>0</Y>
+      </Point>
+      <Point>
+        <X>256</X>
         <Y>64</Y>
       </Point>
       <Point>
-        <X>0</X>
-        <Y>128</Y>
-      </Point>
-      <Point>
-        <X>128</X>
-        <Y>128</Y>
-      </Point>
-      <Point>
-        <X>0</X>
-        <Y>192</Y>
-      </Point>
-      <Point>
-        <X>64</X>
-        <Y>192</Y>
-      </Point>
-      <Point>
-        <X>0</X>
-        <Y>320</Y>
-      </Point>
-      <Point>
-        <X>64</X>
-        <Y>320</Y>
-      </Point>
-      <Point>
-        <X>128</X>
-        <Y>384</Y>
-      </Point>
-      <Point>
         <X>192</X>
-        <Y>448</Y>
+        <Y>128</Y>
+      </Point>
+      <Point>
+        <X>0</X>
+        <Y>192</Y>
+      </Point>
+      <Point>
+        <X>128</X>
+        <Y>192</Y>
+      </Point>
+      <Point>
+        <X>0</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>128</X>
+        <Y>320</Y>
       </Point>
     </PossibleAttacks>
-    <Name>Queen</Name>
-    <Side>White</Side>
+    <Name>Bishop</Name>
+    <Side>Black</Side>
     <Moves>8</Moves>
     <HasMoved>true</HasMoved>
     <Location>
-      <X>0</X>
+      <X>64</X>
       <Y>256</Y>
     </Location>
     <BtnSize>64</BtnSize>
     <FigureWay>
       <Point>
-        <X>192</X>
+        <X>256</X>
         <Y>64</Y>
       </Point>
       <Point>
-        <X>128</X>
+        <X>192</X>
         <Y>128</Y>
       </Point>
       <Point>
-        <X>64</X>
+        <X>128</X>
         <Y>192</Y>
       </Point>
     </FigureWay>
   </Figure>
-  <Figure xsi:type="Pawn">
-    <DIRECTIONs>
-      <DIRECTIONS>TOP</DIRECTIONS>
-    </DIRECTIONs>
-    <PossibleMoves>
-      <Point>
-        <X>64</X>
-        <Y>192</Y>
-      </Point>
-    </PossibleMoves>
-    <PossibleAttacks>
-      <Point>
-        <X>0</X>
-        <Y>192</Y>
-      </Point>
-      <Point>
-        <X>128</X>
-        <Y>192</Y>
-      </Point>
-    </PossibleAttacks>
-    <Name>Pawn</Name>
-    <Side>White</Side>
-    <Moves>1</Moves>
-    <HasMoved>true</HasMoved>
-    <Location>
-      <X>64</X>
-      <Y>256</Y>
-    </Location>
-    <BtnSize>64</BtnSize>
-    <FigureWay />
-    <End>0</End>
-  </Figure>
   <Figure xsi:type="Space">
+    <DIRECTIONs />
     <PossibleMoves />
     <PossibleAttacks />
     <Name>Space</Name>
@@ -926,34 +925,23 @@
     <BtnSize>64</BtnSize>
     <FigureWay />
   </Figure>
-  <Figure xsi:type="Pawn">
-    <DIRECTIONs>
-      <DIRECTIONS>BOT</DIRECTIONS>
-    </DIRECTIONs>
+  <Figure xsi:type="Space">
+    <DIRECTIONs />
     <PossibleMoves />
-    <PossibleAttacks>
-      <Point>
-        <X>128</X>
-        <Y>320</Y>
-      </Point>
-      <Point>
-        <X>256</X>
-        <Y>320</Y>
-      </Point>
-    </PossibleAttacks>
-    <Name>Pawn</Name>
-    <Side>Black</Side>
-    <Moves>1</Moves>
-    <HasMoved>true</HasMoved>
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
     <Location>
       <X>192</X>
       <Y>256</Y>
     </Location>
     <BtnSize>64</BtnSize>
     <FigureWay />
-    <End>0</End>
   </Figure>
   <Figure xsi:type="Space">
+    <DIRECTIONs />
     <PossibleMoves />
     <PossibleAttacks />
     <Name>Space</Name>
@@ -997,20 +985,37 @@
     <BtnSize>64</BtnSize>
     <FigureWay />
   </Figure>
-  <Figure xsi:type="Space">
-    <DIRECTIONs />
-    <PossibleMoves />
-    <PossibleAttacks />
-    <Name>Space</Name>
-    <Side>None</Side>
-    <Moves>0</Moves>
-    <HasMoved>false</HasMoved>
+  <Figure xsi:type="Pawn">
+    <DIRECTIONs>
+      <DIRECTIONS>TOP</DIRECTIONS>
+    </DIRECTIONs>
+    <PossibleMoves>
+      <Point>
+        <X>448</X>
+        <Y>192</Y>
+      </Point>
+    </PossibleMoves>
+    <PossibleAttacks>
+      <Point>
+        <X>384</X>
+        <Y>192</Y>
+      </Point>
+      <Point>
+        <X>512</X>
+        <Y>192</Y>
+      </Point>
+    </PossibleAttacks>
+    <Name>Pawn</Name>
+    <Side>White</Side>
+    <Moves>1</Moves>
+    <HasMoved>true</HasMoved>
     <Location>
       <X>448</X>
       <Y>256</Y>
     </Location>
     <BtnSize>64</BtnSize>
     <FigureWay />
+    <End>0</End>
   </Figure>
   <Figure xsi:type="Space">
     <DIRECTIONs />
@@ -1057,32 +1062,20 @@
     <BtnSize>64</BtnSize>
     <FigureWay />
   </Figure>
-  <Figure xsi:type="Pawn">
-    <DIRECTIONs>
-      <DIRECTIONS>TOP</DIRECTIONS>
-    </DIRECTIONs>
+  <Figure xsi:type="Space">
+    <DIRECTIONs />
     <PossibleMoves />
-    <PossibleAttacks>
-      <Point>
-        <X>128</X>
-        <Y>256</Y>
-      </Point>
-      <Point>
-        <X>256</X>
-        <Y>256</Y>
-      </Point>
-    </PossibleAttacks>
-    <Name>Pawn</Name>
-    <Side>White</Side>
-    <Moves>1</Moves>
-    <HasMoved>true</HasMoved>
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
+    <HasMoved>false</HasMoved>
     <Location>
       <X>192</X>
       <Y>320</Y>
     </Location>
     <BtnSize>64</BtnSize>
     <FigureWay />
-    <End>0</End>
   </Figure>
   <Figure xsi:type="Space">
     <DIRECTIONs />
@@ -1129,14 +1122,93 @@
     <BtnSize>64</BtnSize>
     <FigureWay />
   </Figure>
-  <Figure xsi:type="Space">
-    <DIRECTIONs />
-    <PossibleMoves />
-    <PossibleAttacks />
-    <Name>Space</Name>
-    <Side>None</Side>
-    <Moves>0</Moves>
-    <HasMoved>false</HasMoved>
+  <Figure xsi:type="Rook">
+    <DIRECTIONs>
+      <DIRECTIONS>TOP</DIRECTIONS>
+      <DIRECTIONS>RIGHT</DIRECTIONS>
+      <DIRECTIONS>BOT</DIRECTIONS>
+      <DIRECTIONS>LEFT</DIRECTIONS>
+    </DIRECTIONs>
+    <PossibleMoves>
+      <Point>
+        <X>0</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>64</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>128</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>192</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>256</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>320</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>384</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>448</X>
+        <Y>384</Y>
+      </Point>
+      <Point>
+        <X>448</X>
+        <Y>448</Y>
+      </Point>
+    </PossibleMoves>
+    <PossibleAttacks>
+      <Point>
+        <X>0</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>64</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>128</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>192</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>256</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>320</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>384</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>448</X>
+        <Y>384</Y>
+      </Point>
+      <Point>
+        <X>448</X>
+        <Y>448</Y>
+      </Point>
+    </PossibleAttacks>
+    <Name>Rook</Name>
+    <Side>White</Side>
+    <Moves>8</Moves>
+    <HasMoved>true</HasMoved>
     <Location>
       <X>448</X>
       <Y>320</Y>
@@ -1149,6 +1221,10 @@
       <DIRECTIONS>TOP</DIRECTIONS>
     </DIRECTIONs>
     <PossibleMoves>
+      <Point>
+        <X>0</X>
+        <Y>256</Y>
+      </Point>
       <Point>
         <X>0</X>
         <Y>320</Y>
@@ -1176,13 +1252,29 @@
     <FigureWay />
     <End>0</End>
   </Figure>
-  <Figure xsi:type="Space">
-    <DIRECTIONs />
-    <PossibleMoves />
-    <PossibleAttacks />
-    <Name>Space</Name>
-    <Side>None</Side>
-    <Moves>0</Moves>
+  <Figure xsi:type="Pawn">
+    <DIRECTIONs>
+      <DIRECTIONS>TOP</DIRECTIONS>
+    </DIRECTIONs>
+    <PossibleMoves>
+      <Point>
+        <X>64</X>
+        <Y>320</Y>
+      </Point>
+    </PossibleMoves>
+    <PossibleAttacks>
+      <Point>
+        <X>0</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>128</X>
+        <Y>320</Y>
+      </Point>
+    </PossibleAttacks>
+    <Name>Pawn</Name>
+    <Side>White</Side>
+    <Moves>2</Moves>
     <HasMoved>false</HasMoved>
     <Location>
       <X>64</X>
@@ -1190,14 +1282,35 @@
     </Location>
     <BtnSize>64</BtnSize>
     <FigureWay />
+    <End>0</End>
   </Figure>
-  <Figure xsi:type="Space">
-    <DIRECTIONs />
-    <PossibleMoves />
-    <PossibleAttacks />
-    <Name>Space</Name>
-    <Side>None</Side>
-    <Moves>0</Moves>
+  <Figure xsi:type="Pawn">
+    <DIRECTIONs>
+      <DIRECTIONS>TOP</DIRECTIONS>
+    </DIRECTIONs>
+    <PossibleMoves>
+      <Point>
+        <X>128</X>
+        <Y>256</Y>
+      </Point>
+      <Point>
+        <X>128</X>
+        <Y>320</Y>
+      </Point>
+    </PossibleMoves>
+    <PossibleAttacks>
+      <Point>
+        <X>64</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>192</X>
+        <Y>320</Y>
+      </Point>
+    </PossibleAttacks>
+    <Name>Pawn</Name>
+    <Side>White</Side>
+    <Moves>2</Moves>
     <HasMoved>false</HasMoved>
     <Location>
       <X>128</X>
@@ -1205,14 +1318,35 @@
     </Location>
     <BtnSize>64</BtnSize>
     <FigureWay />
+    <End>0</End>
   </Figure>
-  <Figure xsi:type="Space">
-    <DIRECTIONs />
-    <PossibleMoves />
-    <PossibleAttacks />
-    <Name>Space</Name>
-    <Side>None</Side>
-    <Moves>0</Moves>
+  <Figure xsi:type="Pawn">
+    <DIRECTIONs>
+      <DIRECTIONS>TOP</DIRECTIONS>
+    </DIRECTIONs>
+    <PossibleMoves>
+      <Point>
+        <X>192</X>
+        <Y>256</Y>
+      </Point>
+      <Point>
+        <X>192</X>
+        <Y>320</Y>
+      </Point>
+    </PossibleMoves>
+    <PossibleAttacks>
+      <Point>
+        <X>128</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>256</X>
+        <Y>320</Y>
+      </Point>
+    </PossibleAttacks>
+    <Name>Pawn</Name>
+    <Side>White</Side>
+    <Moves>2</Moves>
     <HasMoved>false</HasMoved>
     <Location>
       <X>192</X>
@@ -1220,6 +1354,7 @@
     </Location>
     <BtnSize>64</BtnSize>
     <FigureWay />
+    <End>0</End>
   </Figure>
   <Figure xsi:type="Space">
     <DIRECTIONs />
@@ -1308,33 +1443,13 @@
     <FigureWay />
     <End>0</End>
   </Figure>
-  <Figure xsi:type="Pawn">
-    <DIRECTIONs>
-      <DIRECTIONS>TOP</DIRECTIONS>
-    </DIRECTIONs>
-    <PossibleMoves>
-      <Point>
-        <X>448</X>
-        <Y>256</Y>
-      </Point>
-      <Point>
-        <X>448</X>
-        <Y>320</Y>
-      </Point>
-    </PossibleMoves>
-    <PossibleAttacks>
-      <Point>
-        <X>384</X>
-        <Y>320</Y>
-      </Point>
-      <Point>
-        <X>512</X>
-        <Y>320</Y>
-      </Point>
-    </PossibleAttacks>
-    <Name>Pawn</Name>
-    <Side>White</Side>
-    <Moves>2</Moves>
+  <Figure xsi:type="Space">
+    <DIRECTIONs />
+    <PossibleMoves />
+    <PossibleAttacks />
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
     <HasMoved>false</HasMoved>
     <Location>
       <X>448</X>
@@ -1342,7 +1457,6 @@
     </Location>
     <BtnSize>64</BtnSize>
     <FigureWay />
-    <End>0</End>
   </Figure>
   <Figure xsi:type="Rook">
     <DIRECTIONs>
@@ -1375,10 +1489,6 @@
         <X>128</X>
         <Y>320</Y>
       </Point>
-      <Point>
-        <X>192</X>
-        <Y>384</Y>
-      </Point>
     </PossibleMoves>
     <PossibleAttacks>
       <Point>
@@ -1388,10 +1498,6 @@
       <Point>
         <X>128</X>
         <Y>320</Y>
-      </Point>
-      <Point>
-        <X>192</X>
-        <Y>384</Y>
       </Point>
     </PossibleAttacks>
     <Name>Knight</Name>
@@ -1412,66 +1518,8 @@
       <DIRECTIONS>DIAGONAL_RB_LT</DIRECTIONS>
       <DIRECTIONS>DIAGONAL_RT_LB</DIRECTIONS>
     </DIRECTIONs>
-    <PossibleMoves>
-      <Point>
-        <X>448</X>
-        <Y>128</Y>
-      </Point>
-      <Point>
-        <X>384</X>
-        <Y>192</Y>
-      </Point>
-      <Point>
-        <X>320</X>
-        <Y>256</Y>
-      </Point>
-      <Point>
-        <X>0</X>
-        <Y>320</Y>
-      </Point>
-      <Point>
-        <X>256</X>
-        <Y>320</Y>
-      </Point>
-      <Point>
-        <X>64</X>
-        <Y>384</Y>
-      </Point>
-      <Point>
-        <X>192</X>
-        <Y>384</Y>
-      </Point>
-    </PossibleMoves>
-    <PossibleAttacks>
-      <Point>
-        <X>448</X>
-        <Y>128</Y>
-      </Point>
-      <Point>
-        <X>384</X>
-        <Y>192</Y>
-      </Point>
-      <Point>
-        <X>320</X>
-        <Y>256</Y>
-      </Point>
-      <Point>
-        <X>0</X>
-        <Y>320</Y>
-      </Point>
-      <Point>
-        <X>256</X>
-        <Y>320</Y>
-      </Point>
-      <Point>
-        <X>64</X>
-        <Y>384</Y>
-      </Point>
-      <Point>
-        <X>192</X>
-        <Y>384</Y>
-      </Point>
-    </PossibleAttacks>
+    <PossibleMoves />
+    <PossibleAttacks />
     <Name>Bishop</Name>
     <Side>White</Side>
     <Moves>8</Moves>
@@ -1483,13 +1531,56 @@
     <BtnSize>64</BtnSize>
     <FigureWay />
   </Figure>
-  <Figure xsi:type="Space">
-    <DIRECTIONs />
-    <PossibleMoves />
-    <PossibleAttacks />
-    <Name>Space</Name>
-    <Side>None</Side>
-    <Moves>0</Moves>
+  <Figure xsi:type="Queen">
+    <DIRECTIONs>
+      <DIRECTIONS>TOP</DIRECTIONS>
+      <DIRECTIONS>RIGHT</DIRECTIONS>
+      <DIRECTIONS>BOT</DIRECTIONS>
+      <DIRECTIONS>LEFT</DIRECTIONS>
+      <DIRECTIONS>DIAGONAL_LB_RT</DIRECTIONS>
+      <DIRECTIONS>DIAGONAL_LT_RB</DIRECTIONS>
+      <DIRECTIONS>DIAGONAL_RB_LT</DIRECTIONS>
+      <DIRECTIONS>DIAGONAL_RT_LB</DIRECTIONS>
+    </DIRECTIONs>
+    <PossibleMoves>
+      <Point>
+        <X>448</X>
+        <Y>192</Y>
+      </Point>
+      <Point>
+        <X>384</X>
+        <Y>256</Y>
+      </Point>
+      <Point>
+        <X>320</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>256</X>
+        <Y>384</Y>
+      </Point>
+    </PossibleMoves>
+    <PossibleAttacks>
+      <Point>
+        <X>448</X>
+        <Y>192</Y>
+      </Point>
+      <Point>
+        <X>384</X>
+        <Y>256</Y>
+      </Point>
+      <Point>
+        <X>320</X>
+        <Y>320</Y>
+      </Point>
+      <Point>
+        <X>256</X>
+        <Y>384</Y>
+      </Point>
+    </PossibleAttacks>
+    <Name>Queen</Name>
+    <Side>White</Side>
+    <Moves>8</Moves>
     <HasMoved>false</HasMoved>
     <Location>
       <X>192</X>
@@ -1518,14 +1609,6 @@
         <X>320</X>
         <Y>448</Y>
       </Point>
-      <Point>
-        <X>192</X>
-        <Y>448</Y>
-      </Point>
-      <Point>
-        <X>192</X>
-        <Y>384</Y>
-      </Point>
     </PossibleMoves>
     <PossibleAttacks>
       <Point>
@@ -1535,14 +1618,6 @@
       <Point>
         <X>320</X>
         <Y>448</Y>
-      </Point>
-      <Point>
-        <X>192</X>
-        <Y>448</Y>
-      </Point>
-      <Point>
-        <X>192</X>
-        <Y>384</Y>
       </Point>
     </PossibleAttacks>
     <Name>King</Name>
@@ -1604,10 +1679,6 @@
         <X>256</X>
         <Y>384</Y>
       </Point>
-      <Point>
-        <X>448</X>
-        <Y>320</Y>
-      </Point>
     </PossibleMoves>
     <PossibleAttacks>
       <Point>
@@ -1617,10 +1688,6 @@
       <Point>
         <X>256</X>
         <Y>384</Y>
-      </Point>
-      <Point>
-        <X>448</X>
-        <Y>320</Y>
       </Point>
     </PossibleAttacks>
     <Name>Knight</Name>
@@ -1634,18 +1701,13 @@
     <BtnSize>64</BtnSize>
     <FigureWay />
   </Figure>
-  <Figure xsi:type="Rook">
-    <DIRECTIONs>
-      <DIRECTIONS>TOP</DIRECTIONS>
-      <DIRECTIONS>RIGHT</DIRECTIONS>
-      <DIRECTIONS>BOT</DIRECTIONS>
-      <DIRECTIONS>LEFT</DIRECTIONS>
-    </DIRECTIONs>
+  <Figure xsi:type="Space">
+    <DIRECTIONs />
     <PossibleMoves />
     <PossibleAttacks />
-    <Name>Rook</Name>
-    <Side>White</Side>
-    <Moves>8</Moves>
+    <Name>Space</Name>
+    <Side>None</Side>
+    <Moves>0</Moves>
     <HasMoved>false</HasMoved>
     <Location>
       <X>448</X>

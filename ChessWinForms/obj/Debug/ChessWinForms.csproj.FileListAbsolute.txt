@@ -11,7 +11,6 @@ C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.Forms.SelectFigureToChangeForm.resources
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.Properties.Resources.resources
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.csproj.GenerateResource.cache
-C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.csproj.CopyComplete
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.exe
 C:\Users\Admin\source\repos\ChessWinForms\ChessWinForms\obj\Debug\ChessWinForms.pdb

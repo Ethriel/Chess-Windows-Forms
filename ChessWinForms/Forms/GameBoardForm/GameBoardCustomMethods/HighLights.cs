@@ -133,14 +133,29 @@ namespace ChessWinForms.Forms.nGameBoardForm
                 for (int j = 0; j < ToCoverPoints.Count; j++)
                 {
                     toCover = GetFigureByPoint(ToCoverPoints[j]);
-                    if (cover.Attack(toCover))
+                    if (cover is Pawn)
                     {
-                        pos = GetButtonPositionByPoint(CoverFigures[i].Location);
-                        if (pos != -1)
+                        if (cover.Attack(toCover))
                         {
-                            GBoard.Controls[pos].BackColor = Color.Violet;
+                            pos = GetButtonPositionByPoint(CoverFigures[i].Location);
+                            if (pos != -1)
+                            {
+                                GBoard.Controls[pos].BackColor = Color.Violet;
+                            }
                         }
                     }
+                    else
+                    {
+                        if (cover.Move(toCover))
+                        {
+                            pos = GetButtonPositionByPoint(CoverFigures[i].Location);
+                            if (pos != -1)
+                            {
+                                GBoard.Controls[pos].BackColor = Color.Violet;
+                            }
+                        }
+                    }
+
                 }
             }
 

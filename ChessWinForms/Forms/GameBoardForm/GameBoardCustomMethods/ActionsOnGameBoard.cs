@@ -190,18 +190,28 @@ namespace ChessWinForms.Forms.nGameBoardForm
                 {
                     MessageBox.Show("Your king will be under attack after this move! It is not valid!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     SwapBack(tmpFromFigure, tmpToFigure, tmpFromImage, tmpToImage);
+                    NullFiguresAndAction();
+                    return;
                 }
 
                 RefillFiguresList();
                 RefillPointsLists();
                 ResetKingsPositions();
+                GameStatus();
+
+                AddItemToHistory();
                 SwitchPlayer();
                 SetFormText();
-                AddItemToHistory();
-
-                GameStatus();
                 ResetPoints();
             }
+        }
+
+        private void NullFiguresAndAction()
+        {
+            fromFigure = null;
+            toFigure = null;
+            PerformAction = null;
+            attacker = null;
         }
 
         private void SwapBack(Figure from, Figure to, Image fromImage, Image toImage)
@@ -210,7 +220,7 @@ namespace ChessWinForms.Forms.nGameBoardForm
             GBoard.Controls[posTo].Tag = generator.GetFigureInSwap(to);
 
             GBoard.Controls[posFrom].BackgroundImage = fromImage;
-            GBoard.Controls[posFrom].BackgroundImage = toImage;
+            GBoard.Controls[posTo].BackgroundImage = toImage;
 
             (GBoard.Controls[posFrom].Tag as Figure).Location = new Point(from.Location.X, from.Location.Y);
             (GBoard.Controls[posTo].Tag as Figure).Location = new Point(to.Location.X, to.Location.Y);
