@@ -41,14 +41,46 @@ namespace ChessWinForms.Classes
                 king = GameBoard.GetFigureByPoint(GameBoard.WhiteKing);
             }
 
-            king.SetAllNeeded();
+            king.SetPossibleMoves();
 
             for (int i = 0; i < attackers.Count; i++)
             {
                 attacker = GameBoard.GetFigureByPoint(attackers[i]);
-                attacker.SetAllNeeded();
+                //attacker.SetFigureWay(king);
                 if (attacker.Attack(king))
                 {
+                    attacker.SetFigureWay(king);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool IsCheckAfterPlayersMove(string player)
+        {
+            List<Point> attackers = null;
+            Figure attacker = null, king = null;
+
+            if (player == "White")
+            {
+                attackers = GameBoard.BlackFiguresLocations;
+                king = GameBoard.GetFigureByPoint(GameBoard.WhiteKing);
+            }
+            else
+            {
+                attackers = GameBoard.WhiteFiguresLocations;
+                king = GameBoard.GetFigureByPoint(GameBoard.BlackKing);
+            }
+
+            king.SetPossibleMoves();
+
+            for (int i = 0; i < attackers.Count; i++)
+            {
+                attacker = GameBoard.GetFigureByPoint(attackers[i]);
+                //attacker.SetFigureWay(king);
+                if (attacker.Attack(king))
+                {
+                    attacker.SetFigureWay(king);
                     return true;
                 }
             }
@@ -70,12 +102,12 @@ namespace ChessWinForms.Classes
                 king = GameBoard.GetFigureByPoint(GameBoard.WhiteKing);
             }
 
-            king.SetAllNeeded();
+            king.SetPossibleMoves();
 
             for (int i = 0; i < attackers.Count; i++)
             {
                 attacker = GameBoard.GetFigureByPoint(attackers[i]);
-                attacker.SetAllNeeded();
+                //attacker.SetAllNeeded();
                 if (!CanKingMove(king) && !CanKingBeCovered(king, attacker) && !CanAttackerBeTaken(attacker))
                 {
                     return true;
@@ -128,7 +160,7 @@ namespace ChessWinForms.Classes
             for (int i = 0; i < opponentsPawns.Count; i++)
             {
                 attacker = opponentsPawns[i];
-                attacker.SetPossibleMoves();
+                //attacker.SetPossibleMoves();
                 attacker.SetPossibleAttacks();
                 for (int j = 0; j < gb.FromFigure.FigureWay.Count; j++)
                 {
@@ -406,35 +438,51 @@ namespace ChessWinForms.Classes
                     wayPoint = GameBoard.GetFigureByPoint(from.FigureWay[j]);
                     if (defender.Move(wayPoint))
                     {
-                        return true;
+                        if (!GameBoard.Defenders.Contains(defenders[i]))
+                        {
+                            GameBoard.Defenders.Add(defenders[i]);
+                        }
                     }
                 }
             }
-            return false;
+            return GameBoard.Defenders.Any() ? true : false;
         }
 
-        private bool CanAttackerBeTaken(Figure from)
+        private bool CanAttackerBeTaken(Figure attacker)
         {
-            List<Point> attackers = null;
-            Figure attacker = null;
-            if (from.Side == "White")
+            List<Point> defenders = null;
+            Figure defender = null;
+            if (attacker.Side == "White")
             {
-                attackers = GameBoard.BlackFiguresLocations;
+                defenders = GameBoard.BlackFiguresLocations;
             }
-            else if (from.Side == "Black")
+            else if (attacker.Side == "Black")
             {
-                attackers = GameBoard.WhiteFiguresLocations;
+                defenders = GameBoard.WhiteFiguresLocations;
             }
 
-            for (int i = 0; i < attackers.Count; i++)
+            for (int i = 0; i < defenders.Count; i++)
             {
-                attacker = GameBoard.GetFigureByPoint(attackers[i]);
-                if (attacker.Attack(from))
+                defender = GameBoard.GetFigureByPoint(defenders[i]);
+                if (i == 8)
                 {
-                    return true;
+                    int b = 0;
+                }
+                if (defender.Attack(attacker))
+                {
+                    if (!GameBoard.Defenders.Contains(defenders[i]))
+                    {
+                        GameBoard.Defenders.Add(defenders[i]);
+                    }
                 }
             }
-            return false;
+            return GameBoard.Defenders.Any() ? true : false;
+        }
+
+        public void SetDefenders(Figure king, Figure attacker)
+        {
+            bool a = CanKingBeCovered(king, attacker);
+            bool b = CanAttackerBeTaken(attacker);
         }
     }
 }

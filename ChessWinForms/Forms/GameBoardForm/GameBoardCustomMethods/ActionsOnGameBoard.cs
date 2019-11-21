@@ -18,7 +18,19 @@ namespace ChessWinForms.Forms.nGameBoardForm
         {
             Button b = sender as Button;
 
-            //Message(b);
+            if (WasChecked)
+            {
+                ResetDefenders();
+                if (!IsSelectedFigureAfterCheckIsRight(b.Location))
+                {
+                    SetErrorSelectedFigure();
+                    return;
+                }
+                else
+                {
+                    WasChecked = false;
+                }
+            }
 
             if (fromFigure == null && (b.Tag as Figure).Side == "None")
             {
@@ -37,8 +49,6 @@ namespace ChessWinForms.Forms.nGameBoardForm
 
             SetInfoText();
 
-            (b.Tag as Figure).SetAllNeeded();
-
             if (chbxToggleHighlight.Checked)
             {
                 HighlightPath();
@@ -48,6 +58,34 @@ namespace ChessWinForms.Forms.nGameBoardForm
 
             TakeAction();
         }
+
+        public void TakeAction()
+        {
+            if (fromFigure != null && toFigure != null)
+            {
+                if (toFigure.Side == Opponent)
+                {
+                    PerformAction = fromFigure.Attack;
+                }
+                else if (toFigure.Side == "None")
+                {
+                    PerformAction = fromFigure.Move;
+                }
+                else if (FromFigure.Side == ToFigure.Side && ((FromFigure is King) && (ToFigure is Rook)))
+                {
+                    Castling();
+                }
+                else if(FromFigure == ToFigure)
+                {
+                    fromFigure = null;
+                    toFigure = null;
+                    PerformAction = null;
+                    return;
+                }
+                Act();
+            }
+        }
+
         public void Act()
         {
             posFrom = GetButtonPosition(fromFigure);
@@ -56,11 +94,9 @@ namespace ChessWinForms.Forms.nGameBoardForm
             {
                 return;
             }
-            if (fromFigure == toFigure)
-            {
-            }
             else if (PerformAction(toFigure))
             {
+                FromFigure.SetFigureWay(ToFigure);
                 if (FromFigure is Pawn)
                 {
                     Figure taker = null;
@@ -71,8 +107,9 @@ namespace ChessWinForms.Forms.nGameBoardForm
                         return;
                     }
                 }
+
                 Swap();
-                
+
                 if (FromFigure is Pawn)
                 {
                     if (ChessValidator.ValidatePawnChange(GBoard.Controls[posTo].Tag as Figure))
@@ -85,15 +122,13 @@ namespace ChessWinForms.Forms.nGameBoardForm
                         GameStatus();
                     }
                 }
-                SwitchPlayer();
-                SetFormText();
-                AddItemToHistory();
+                
             }
             else
             {
                 MessageBox.Show("Invalid move", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
+
             fromFigure = null;
             toFigure = null;
             PerformAction = null;
@@ -122,17 +157,21 @@ namespace ChessWinForms.Forms.nGameBoardForm
             if (posFrom != -1 && posTo != -1)
             {
                 (GBoard.Controls[posFrom].Tag as Figure).HasMoved = true;
-                Figure tmpFigure = SetCorrespondingFigure(fromFigure); // set tmp figure = from figure
 
-                Image tmpImage = GBoard.Controls[posFrom].BackgroundImage;
+                Figure tmpFromFigure = SetCorrespondingFigure(fromFigure); // set tmp figure = from figure
+                Figure tmpToFigure = SetCorrespondingFigure(toFigure);
+
+                Image tmpFromImage = GBoard.Controls[posFrom].BackgroundImage;
+                Image tmpToImage = GBoard.Controls[posTo].BackgroundImage;
                 GBoard.Controls[posFrom].BackgroundImage = GBoard.Controls[posTo].BackgroundImage;
-                GBoard.Controls[posTo].BackgroundImage = tmpImage;
+                GBoard.Controls[posTo].BackgroundImage = tmpFromImage;
 
                 GBoard.Controls[posFrom].Tag = SetCorrespondingFigure(toFigure); // from = to
-                GBoard.Controls[posTo].Tag = SetCorrespondingFigure(tmpFigure); // to = tmp (from)
+                GBoard.Controls[posTo].Tag = SetCorrespondingFigure(tmpFromFigure); // to = tmp (from)
 
                 (GBoard.Controls[posFrom].Tag as Figure).Location = new Point(FromPoint.X, FromPoint.Y); // save locations
                 (GBoard.Controls[posTo].Tag as Figure).Location = new Point(ToPoint.X, ToPoint.Y); // of figures at gameboard
+                attacker = generator.GetFigureInSwap(GBoard.Controls[posTo].Tag as Figure);
 
                 if (toFigure.Side == Opponent)
                 {
@@ -147,13 +186,34 @@ namespace ChessWinForms.Forms.nGameBoardForm
                     GBoard.Controls[posFrom].Tag = space;
                 }
 
+                if (ChessValidator.IsCheckAfterPlayersMove(Player)) // if player's move opens his king for attack - this move is invalid
+                {
+                    MessageBox.Show("Your king will be under attack after this move! It is not valid!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    SwapBack(tmpFromFigure, tmpToFigure, tmpFromImage, tmpToImage);
+                }
+
                 RefillFiguresList();
                 RefillPointsLists();
                 ResetKingsPositions();
+                SwitchPlayer();
+                SetFormText();
+                AddItemToHistory();
 
                 GameStatus();
                 ResetPoints();
             }
+        }
+
+        private void SwapBack(Figure from, Figure to, Image fromImage, Image toImage)
+        {
+            GBoard.Controls[posFrom].Tag = generator.GetFigureInSwap(from);
+            GBoard.Controls[posTo].Tag = generator.GetFigureInSwap(to);
+
+            GBoard.Controls[posFrom].BackgroundImage = fromImage;
+            GBoard.Controls[posFrom].BackgroundImage = toImage;
+
+            (GBoard.Controls[posFrom].Tag as Figure).Location = new Point(from.Location.X, from.Location.Y);
+            (GBoard.Controls[posTo].Tag as Figure).Location = new Point(to.Location.X, to.Location.Y);
         }
 
         private void GameStatus()
@@ -161,6 +221,8 @@ namespace ChessWinForms.Forms.nGameBoardForm
             if (ChessValidator.ValidateCheck(Player))
             {
                 Check();
+                attacker = generator.GetFigureInSwap(GBoard.Controls[posTo].Tag as Figure);
+                ResetDefenders();
                 if (ChessValidator.ValidateCheckMate(Player))
                 {
                     Checkmate();
@@ -208,7 +270,20 @@ namespace ChessWinForms.Forms.nGameBoardForm
         {
             if ((b.Tag as Figure).Side != Player && (b.Tag as Figure).Side != "None")
             {
+                int sz = b.Size.Height;
                 errorProvider.Clear();
+                switch (b.Location.X)
+                {
+                    case 0:
+                        errorProvider.SetIconAlignment(b, ErrorIconAlignment.MiddleRight);
+                        break;
+                    case 448:
+                        errorProvider.SetIconAlignment(b, ErrorIconAlignment.MiddleLeft);
+                        break;
+                    default:
+                        errorProvider.SetIconAlignment(b, ErrorIconAlignment.MiddleLeft);
+                        break;
+                }
                 errorProvider.SetError(b, "This is not your figure");
                 return false;
             }
@@ -219,25 +294,7 @@ namespace ChessWinForms.Forms.nGameBoardForm
             }
         }
 
-        public void TakeAction()
-        {
-            if (fromFigure != null && toFigure != null)
-            {
-                if (toFigure.Side == Opponent)
-                {
-                    PerformAction = fromFigure.Attack;
-                }
-                else if (toFigure.Side == "None")
-                {
-                    PerformAction = fromFigure.Move;
-                }
-                else if (FromFigure.Side == ToFigure.Side)
-                {
-                    Castling();
-                }
-                Act();
-            }
-        }
+        
 
         private int GetButtonPositionByPoint(Point p)
         {
@@ -252,8 +309,6 @@ namespace ChessWinForms.Forms.nGameBoardForm
             }
             return pos;
         }
-
-
 
         private void SetInfoTextStart()
         {
@@ -380,6 +435,26 @@ namespace ChessWinForms.Forms.nGameBoardForm
             GBoard.Controls[posTo].Tag = generator.GetFigureInSwap(ToChange);
             (GBoard.Controls[posTo].Tag as Figure).Location = newLocation;
             GBoard.Controls[posTo].BackgroundImage = Image.FromFile($@"../../pictures/figures/{ToChange.Name.ToLower()}_{ToChange.Side.ToLower()}.png");
+        }
+
+        private bool IsSelectedFigureAfterCheckIsRight(Point figureLocation)
+        {
+            return Defenders.Contains(figureLocation);
+        }
+
+        private void SetErrorSelectedFigure()
+        {
+            MessageBox.Show("Your king is under attack!", "King under attack", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            Figure f = null;
+            int pos = 0;
+            Button b = null;
+            for (int i = 0; i < Defenders.Count; i++)
+            {
+                f = GetFigureByPoint(Defenders[i]);
+                pos = GetButtonPosition(f);
+                b = (Button)GBoard.Controls[pos];
+                errorProvider.SetError(b, "Select this figure or king");
+            }
         }
 
         #endregion

@@ -105,7 +105,6 @@ namespace ChessWinForms.Classes.Figures
                 SetValidate(ref validate, d);
                 if (validate != null)
                 {
-                    this.FigureWay.Clear();
                     if (validate(this, to, GameBoard))
                     {
                         return true;
@@ -120,7 +119,10 @@ namespace ChessWinForms.Classes.Figures
             DIRECTIONS d = DirectionValidator.GetDirection(this.Location, to.Location);
             if (this.DIRECTIONs.Contains(d))
             {
-                
+                if((Math.Abs(this.Location.X - to.Location.X) == this.BtnSize) || (Math.Abs(this.Location.Y - to.Location.Y) == this.BtnSize))
+                {
+                    return true;
+                }
                 to = GetFigureForAttack(to);
                 if (this.Move(to))
                 {
@@ -244,12 +246,6 @@ namespace ChessWinForms.Classes.Figures
                 defender = GameBoard.WhiteFiguresLocations;
             }
 
-
-            //if (enemy == "White")
-            //    defender = GameBoard.WhiteFiguresLocations;
-            //else
-            //    defender = GameBoard.BlackFiguresLocations;
-
             for (int i = 0; i < DIRECTIONs.Count; i++)
             {
                 d = this.DIRECTIONs[i];
@@ -286,6 +282,29 @@ namespace ChessWinForms.Classes.Figures
             if (this is King)
             {
                 (this as King).SetSurrounding();
+            }
+        }
+
+        public virtual void SetFigureWay(Figure to)
+        {
+            this.FigureWay.Clear();
+
+            Point curr = new Point();
+            DIRECTIONS d = DirectionValidator.GetDirection(this.Location, to.Location);
+            DIRECTIONS dir = DIRECTIONS.NULL;
+
+            for (int i = 0; i < this.PossibleMoves.Count; i++)
+            {
+                curr = new Point(this.PossibleMoves[i].X, this.PossibleMoves[i].Y);
+                dir = DirectionValidator.GetDirection(this.Location, curr);
+                if(dir.Equals(d))
+                {
+                    if(curr.Equals(to.Location))
+                    {
+                        break;
+                    }
+                    this.FigureWay.Add(curr);
+                }
             }
         }
     }

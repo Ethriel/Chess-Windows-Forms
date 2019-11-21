@@ -31,7 +31,7 @@ namespace ChessWinForms.Forms.nGameBoardForm
         }
         MainForm Base;
         SelectFigureToChangeForm SelectFigure { get; set; }
-        Figure fromFigure, toFigure, spaceF;
+        Figure fromFigure, toFigure, spaceF, attacker;
         FigureGenerator generator;
         PerformAction PerformAction;
         public List<Color> DefaultBoardColors;
@@ -71,6 +71,20 @@ namespace ChessWinForms.Forms.nGameBoardForm
         public string Opponent { get; set; }
         public string Scenario { get; set; }
         public Figure ToChange { get; set; }
+        public Figure Attacker
+        {
+            get
+            {
+                return attacker;
+            }
+            set
+            {
+                if(value != null)
+                {
+                    attacker = value;
+                }
+            }
+        }
         string PathStandartBoard, PathSavedBoard, PathStaleMate, PathCheckMate, 
             PathCastlingNoBetween, PathCastlingNormal, PathTakePawnOnMove, PathChangePawn;
         public bool IsCheckmate, WasChecked;
@@ -108,8 +122,8 @@ namespace ChessWinForms.Forms.nGameBoardForm
         {
             if (!IsCheckmate)
             {
-                //RefillFiguresList();
-                //write.WriteFile(PathSavedBoard, AllFigures);
+                RefillFiguresList();
+                write.WriteFile(PathSavedBoard, AllFigures);
             }
         }
 

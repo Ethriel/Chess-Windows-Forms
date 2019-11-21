@@ -121,18 +121,19 @@ namespace ChessWinForms.Forms.nGameBoardForm
                     ToCoverFigures.Add((Figure)GBoard.Controls[pos].Tag);
                 }
 
-
                 space = generator.GetFigureStart(typeof(Space), "Space", "None", 0, 64, this);
                 space.Location = ToCoverPoints[i];
                 GBoard.Controls[pos].Tag = generator.GetFigureInSwap(space);
             }
 
+            Figure toCover = null;
             for (int i = 0; i < CoverFigures.Count; i++)
             {
                 cover = CoverFigures[i];
-                for (int j = 0; j < ToCoverFigures.Count; j++)
+                for (int j = 0; j < ToCoverPoints.Count; j++)
                 {
-                    if (cover.Move(ToCoverFigures[j]))
+                    toCover = GetFigureByPoint(ToCoverPoints[j]);
+                    if (cover.Attack(toCover))
                     {
                         pos = GetButtonPositionByPoint(CoverFigures[i].Location);
                         if (pos != -1)

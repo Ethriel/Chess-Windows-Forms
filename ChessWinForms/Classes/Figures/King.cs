@@ -44,7 +44,7 @@ namespace ChessWinForms.Classes.Figures
         public override bool Move(Figure to)
         {
             DIRECTIONS d = DirectionValidator.GetDirection(this.Location, to.Location);
-            if (!this.DIRECTIONs.Contains(d))
+            if (!this.DIRECTIONs.Contains(d) || !this.Surrounding.Contains(to.Location))
             {
                 return false;
             }
@@ -128,6 +128,37 @@ namespace ChessWinForms.Classes.Figures
                             k--;
                         }
                     }
+                }
+            }
+        }
+
+        public void SetNewSurroundingIfChecked(Figure attacker)
+        {
+            if (this.Side == attacker.Side)
+            {
+                return;
+            }
+            Point p = new Point();
+
+            for (int i = 0; i < attacker.FigureWay.Count; i++)
+            {
+                p = attacker.FigureWay[i];
+                if (this.Surrounding.Contains(p))
+                {
+                    this.Surrounding.Remove(p);
+                }
+            }
+        }
+
+        public override void SetPossibleMoves()
+        {
+            this.PossibleMoves.Clear();
+
+            for (int i = 0; i < this.Surrounding.Count; i++)
+            {
+                if (GameBoard.GetFigureByPoint(this.Surrounding[i]).Side == "None")
+                {
+                    this.PossibleMoves.Add(this.Surrounding[i]);
                 }
             }
         }

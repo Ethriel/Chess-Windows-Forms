@@ -216,7 +216,6 @@ namespace ChessWinForms.Classes
                     continue;
                 else if (f.Side == "None")
                 {
-                    gameboard.FromFigure.FigureWay.Add(p);
                     counter++;
                 }
                 else if (f.Side == enemy)
@@ -251,7 +250,6 @@ namespace ChessWinForms.Classes
                     continue;
                 else if (f.Side == "None")
                 {
-                    gameboard.FromFigure.FigureWay.Add(p);
                     counter++;
                 }
                 else if (f.Side == enemy)
@@ -285,7 +283,6 @@ namespace ChessWinForms.Classes
                     continue;
                 else if (f.Side == "None")
                 {
-                    gameboard.FromFigure.FigureWay.Add(p);
                     counter++;
                 }
                 else if (f.Side == enemy)
@@ -319,7 +316,6 @@ namespace ChessWinForms.Classes
                     continue;
                 else if (f.Side == "None")
                 {
-                    gameboard.FromFigure.FigureWay.Add(p);
                     counter++;
                 }
                 else if (f.Side == enemy)
@@ -351,7 +347,6 @@ namespace ChessWinForms.Classes
                             continue;
                         else if (f.Side == "None")
                         {
-                            gameboard.FromFigure.FigureWay.Add(p);
                             counter++;
                         }
                         else if (f.Side == enemy)
@@ -386,7 +381,6 @@ namespace ChessWinForms.Classes
                             continue;
                         else if (f.Side == "None")
                         {
-                            gameboard.FromFigure.FigureWay.Add(p);
                             counter++;
                         }
                         else if (f.Side == enemy)

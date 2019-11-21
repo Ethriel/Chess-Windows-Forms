@@ -69,9 +69,6 @@ namespace ChessWinForms.Forms.nGameBoardForm
         private void Message(Button sender)
         {
             Figure f = (sender.Tag as Figure);
-            //MessageBox.Show($"CLICKED: {f.Location}, {f.Name}, {f.Side}");
-            //MessageBox.Show($"HAS MOVED: {f.HasMoved}"); ;
-            //MessageBox.Show($"LOCATION: {sender.Location}");
             MessageBox.Show($"TYPE: {sender.Tag.GetType()}");
         }
 
@@ -85,6 +82,7 @@ namespace ChessWinForms.Forms.nGameBoardForm
         private void Check()
         {
             MessageBox.Show($"Check to {Opponent} king", "Check", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            WasChecked = true;
         }
 
         private void Checkmate()
@@ -145,8 +143,26 @@ namespace ChessWinForms.Forms.nGameBoardForm
             for (int i = 0; i < GBoard.Controls.Count; i++)
             {
                 curr = (GBoard.Controls[i].Tag as Figure);
+                curr.SetAllNeeded();
                 AllFigures.Add(curr);
             }
+        }
+
+        private void ResetDefenders()
+        {
+            Defenders.Clear();
+            Figure king = null;
+            if (attacker.Side == "White")
+            {
+                king = GetFigureByPoint(BlackKing);
+            }
+            else
+            {
+                king = GetFigureByPoint(WhiteKing);
+            }
+            //Defenders.Add(king.Location);
+            (king as King).SetNewSurroundingIfChecked(attacker);
+            ChessValidator.SetDefenders(king, attacker);
         }
         #endregion
 
@@ -169,6 +185,7 @@ namespace ChessWinForms.Forms.nGameBoardForm
             SpacesLocations = new List<Point>();
             HighLightPoints = new List<Point>();
             ToCoverPoints = new List<Point>();
+            Defenders = new List<Point>();
             generator = new FigureGenerator();
             DefaultBoardColors = new List<Color>();
             Player = "White";
